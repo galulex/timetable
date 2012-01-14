@@ -1,0 +1,2 @@
+module Universal::DashboardHelper
+end

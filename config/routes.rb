@@ -1,10 +1,15 @@
 Timetable::Application.routes.draw do
 
-  resource :admin, :only => :show
+  resource :admin, :controller => "admin", :only => :show
+
   namespace :admin do
     resources :users, :only => [:index, :new, :create]
   end
 
-  root :to => 'home#index'
+  namespace :universal do
+    resources :dashboard
+  end
+
+  root :to => 'universal/dashboard#index', :as => :home
 
 end
