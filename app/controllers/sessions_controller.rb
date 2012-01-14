@@ -22,4 +22,14 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
+  def auth
+    @client = FacebookOAuth::Client.new(
+      :application_id => CONFIG['facebook']['key'],
+      :application_secret => CONFIG['facebook']['secret'],
+      :callback => 'http://localhost:3000',
+      :token => session[:access_token]
+    )
+    redirect_to @client.authorize_url
+  end
+
 end
