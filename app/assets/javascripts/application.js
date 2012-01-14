@@ -6,4 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lazybox
 //= require_tree .
+
+$(document).ready(function() {
+  $('a[rel*=lazybox]').lazybox();
+});

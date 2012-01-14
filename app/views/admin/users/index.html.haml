@@ -1,0 +1,15 @@
+%h1 Users page
+= link_to 'Invite new dispatcher', new_admin_user_path, :rel => :lazybox
+
+- if @users
+  %table
+    %thead
+      %tr
+        %th Email
+        %th Name
+        %th Type
+        %th Institution
+    %tbody
+      = render :partial => 'user', :collection => @users, :as => :user
+- else
+  %h3 No Users

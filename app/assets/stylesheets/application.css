@@ -4,4 +4,39 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require lazybox
 */
+
+form {
+  width: 400px;
+  text-align: right;
+}
+
+input {
+  width: 250px;
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+}
+
+input[type=submit] {
+  width: 260px;
+}
+
+label {
+  display: inline-block;
+  margin: 5px 10px 0 0;
+  width: 100px;
+  text-align: right;
+}
+
+select {
+  width: 260px;
+  padding: 5px;
+}
+
+div.field_with_errors { display: inline }
+
+span.error {
+  color: red;
+  display: block;
+}

@@ -1,0 +1,11 @@
+development:
+  admin:
+    name: admin
+    password: admin
+  facebook:
+    key: 208671389223003
+    secret: d909c25d53bc8ab5f16d27c082b7c2f3
+
+test:
+
+production:
