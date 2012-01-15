@@ -1,0 +1,5 @@
+- unless @audiences.nil?
+  %table.audiences
+    %tbody
+      = render :partial => 'audience', :collection => @audiences
+= link_to '+', new_schedule_audience_path(@schedule), :id => :new_audience, :rel => :lazybox

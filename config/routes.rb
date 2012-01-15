@@ -13,6 +13,7 @@ Timetable::Application.routes.draw do
   resources :schedules do
     resources :teachers
     resources :audiences
+    resources :groups
     resources :lessons
   end
 

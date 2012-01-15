@@ -1,5 +1,5 @@
-- if @dispatcher.errors.any?
+- if @group.errors.any?
   $('#lazybox_body form').html("#{escape_javascript(render :partial => 'form')}");
--else
+- else
   $(document).trigger('close.lazybox');
   window.location.reload();
