@@ -5,10 +5,29 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require lazybox
 //= require_tree .
 
 $(document).ready(function() {
   $('a[rel*=lazybox]').lazybox();
+
+  $("#institution").bind('keyup',function() {
+    $.ajax({
+      url: 'http://graph.facebook.com/search',
+      dataType: 'jsonp',
+      data: {
+        q: $("#institution").val(),
+        type: 'adcollege'
+      },
+      success: function(data) {
+        var autocomplete_data = [];
+        for (var i = 0; i < data['data'].length; i++) {
+          autocomplete_data.push(data['data'][i]['name']);
+        }
+        $("#institution").autocomplete({source:autocomplete_data});
+      }
+    });
+  });
 });
