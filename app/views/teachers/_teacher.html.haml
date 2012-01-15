@@ -1,0 +1,7 @@
+%tr.teacher{:id => "teacher_#{teacher.id}"}
+  %td= teacher.first_name
+  %td= teacher.last_name
+  %td= teacher.hours
+  %td
+    = link_to('edit', edit_schedule_teacher_path(@schedule, teacher), :rel => :lazybox)
+    = link_to('×', schedule_teacher_path(@schedule, teacher), :method => :delete, :remote => true)

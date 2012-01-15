@@ -1,3 +1,6 @@
 %h1 Schedules
 
+- unless @schedules.nil?
+  - @schedules.each do |schedule|
+    = link_to schedule.title, schedule_path(schedule)
 = link_to 'Create new schedule', new_schedule_path, :rel => :lazybox
