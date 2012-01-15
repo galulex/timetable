@@ -8,11 +8,7 @@ Timetable::Application.routes.draw do
 
   resources :users
 
-  resource :session, :only => [:new, :create, :destroy] do
-    member do
-      get :auth
-    end
-  end
+  resource :session, :except => [:edit]
 
   resources :schedules do
     resources :teachers

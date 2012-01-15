@@ -6,4 +6,8 @@ module ApplicationHelper
     end
   end
 
+  def facebook_url
+    fb_client.authorize_url(:scope => 'email')
+  end
+
 end

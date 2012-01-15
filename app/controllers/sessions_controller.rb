@@ -1,5 +1,17 @@
 class SessionsController < ApplicationController
 
+  def show
+    client = fb_client
+    access_token = client.authorize(:code => params[:code])
+    @user = Student.authenticate(client.me.info, access_token.token)
+    if @user
+      session[:user_id] = @user.id
+      redirect_to :root
+    else
+      redirect_to :root, :error => 'Some thing has went wrong. Try one more time'
+    end
+  end
+
   def create
     @user = Dispatcher.authenticate(params[:email], params[:password])
     session[:user_id] = @user.id if @user
@@ -20,16 +32,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to root_url
-  end
-
-  def auth
-    @client = FacebookOAuth::Client.new(
-      :application_id => CONFIG['facebook']['key'],
-      :application_secret => CONFIG['facebook']['secret'],
-      :callback => 'http://localhost:3000',
-      :token => session[:access_token]
-    )
-    redirect_to @client.authorize_url
   end
 
 end
