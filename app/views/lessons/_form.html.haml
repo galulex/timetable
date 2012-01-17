@@ -1,0 +1,12 @@
+= form_for [@schedule, @lesson], :remote => true do |f|
+  = f.label :name, 'Name'
+  = f.text_field :name
+  = error_tag @lesson.errors[:name]
+  = f.label :teacher_id, 'Teacher'
+  = f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
+  = error_tag @lesson.errors[:teacher_id]
+  = f.label :audience_id, 'Audience'
+  = f.select :audience_id, @schedule.audiences.map{ |t| [t.title, t.id] }
+  = error_tag @lesson.errors[:audience_id]
+  = f.hidden_field :group_id, :value => params[:group_id] || @lesson.group_id
+  = f.submit :OK
