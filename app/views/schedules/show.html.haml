@@ -1,8 +1,10 @@
 %h1= @schedule.title
 
-= link_to 'Teachers', schedule_teachers_path(@schedule)
-= link_to 'Audiences', schedule_audiences_path(@schedule)
-= link_to 'Groups', schedule_groups_path(@schedule)
+= link_to 'Manage Teachers', schedule_teachers_path(@schedule)
+= link_to '+', new_schedule_teacher_path(@schedule), :rel => :lazybox
+= link_to 'Manage Audiences', schedule_audiences_path(@schedule)
+= link_to '+', new_schedule_audience_path(@schedule), :rel => :lazybox
+= link_to 'Manage Groups', schedule_groups_path(@schedule)
 
 - if @schedule.groups.any?
   %table
@@ -11,13 +13,14 @@
         %th
         - @schedule.groups.each do |group|
           %th{:id => "group_#{group.id}"}= group.name
+        %th.new_group= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
     %tbody
-      - Date::DAYNAMES.each do |day|
+      - Schedule::DAYS.each_pair do |i, day|
         %tr
-          %td= day
+          %th{ :scope => :row }= day
           - @schedule.groups.each do |group|
             %td
-              - if group.lessons.first #here will be day condition
-                .lesson{ :id => "lesson_#{@schedule.lessons.first.id}"}= group.lessons.first.name #move to partial
+              - if lesson = @schedule.lessons.find_by_group_id_and_day_id(group.id, i)
+                = render :partial => 'lesson', :object => lesson
               - else
-                = link_to('+', new_schedule_lesson_path(@schedule, :group_id => group.id), :rel => :lazybox)
+                = link_to('+', new_schedule_lesson_path(@schedule, :group_id => group.id, :day_id => i), :rel => :lazybox)

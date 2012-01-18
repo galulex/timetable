@@ -5,6 +5,7 @@ class CreateLessons < ActiveRecord::Migration
       t.integer :teacher_id
       t.integer :audience_id
       t.integer :group_id
+      t.integer :day_id
       t.string :name
 
       t.timestamps

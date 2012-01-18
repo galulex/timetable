@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
   before_filter :find_schedule
 
   def new
-    @lesson = Lesson.new
+    @lesson = Lesson.new(:group_id => params[:group_id], :day_id => params[:day_id])
   end
 
   def create

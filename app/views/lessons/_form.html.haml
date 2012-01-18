@@ -8,5 +8,6 @@
   = f.label :audience_id, 'Audience'
   = f.select :audience_id, @schedule.audiences.map{ |t| [t.title, t.id] }
   = error_tag @lesson.errors[:audience_id]
-  = f.hidden_field :group_id, :value => params[:group_id] || @lesson.group_id
+  = f.hidden_field :group_id, :value => @lesson.group_id
+  = f.hidden_field :day_id, :value => @lesson.day_id
   = f.submit :OK
