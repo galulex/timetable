@@ -1,0 +1,5 @@
+- unless @schedule_calls.nil?
+  %table.schedule_calls
+    %tbody
+      = render :partial => 'schedule_call', :collection => @schedule_calls
+= link_to '+', new_schedule_schedule_call_path(@schedule), :id => :new_schedule_call, :rel => :lazybox

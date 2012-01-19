@@ -1,0 +1,7 @@
+%tr.schedule_call{:id => "schedule_call_#{schedule_call.id}"}
+  %td= schedule_call.number
+  %td= schedule_call.begin
+  %td= schedule_call.end
+  %td
+    = link_to('edit', edit_schedule_schedule_call_path(@schedule, schedule_call), :rel => :lazybox)
+    = link_to('×', schedule_schedule_call_path(@schedule, schedule_call), :method => :delete, :remote => true)

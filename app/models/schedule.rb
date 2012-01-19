@@ -8,6 +8,7 @@ class Schedule < ActiveRecord::Base
   has_many :audiences
   has_many :groups
   has_many :lessons
+  has_many :schedule_calls
   belongs_to :dispatcher
 
 end

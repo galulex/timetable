@@ -1,0 +1,11 @@
+= form_for [@schedule, @schedule_call], :remote => true do |f|
+  = f.label :number, 'Number'
+  = f.text_field :number
+  = error_tag @schedule_call.errors[:number]
+  = f.label :begin, 'Begin of Lesson'
+  = f.text_field :begin
+  = error_tag @schedule_call.errors[:begin]
+  = f.label :end, 'End of lesson'
+  = f.text_field :end
+  = error_tag @schedule_call.errors[:end]
+  = f.submit :OK

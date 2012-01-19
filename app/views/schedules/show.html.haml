@@ -5,6 +5,9 @@
 = link_to 'Manage Audiences', schedule_audiences_path(@schedule)
 = link_to '+', new_schedule_audience_path(@schedule), :rel => :lazybox
 = link_to 'Manage Groups', schedule_groups_path(@schedule)
+= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
+= link_to 'Manage Schedule Calls', schedule_schedule_calls_path(@schedule)
+= link_to '+', new_schedule_schedule_call_path(@schedule), :rel => :lazybox
 
 - if @schedule.groups.any?
   %table
