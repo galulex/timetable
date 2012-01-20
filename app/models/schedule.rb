@@ -4,11 +4,11 @@ class Schedule < ActiveRecord::Base
 
   validates :title, :presence => true
 
-  has_many :teachers
-  has_many :audiences
-  has_many :groups
-  has_many :lessons
-  has_many :schedule_calls
+  has_many :teachers, :dependent => :delete_all
+  has_many :audiences, :dependent => :delete_all
+  has_many :groups, :dependent => :delete_all
+  has_many :lessons, :dependent => :delete_all
+  has_many :schedule_calls, :dependent => :delete_all
   belongs_to :dispatcher
 
 end

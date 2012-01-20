@@ -13,7 +13,7 @@ class Dispatcher < User
   before_save :encrypt_password
   before_create :send_invitation
 
-  has_many :schedules
+  has_many :schedules, :dependent => :delete_all
 
   def self.authenticate(email, password)
     user = find_by_email(email)
