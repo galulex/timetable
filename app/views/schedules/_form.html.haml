@@ -1,5 +1,7 @@
 = form_for @schedule, :remote => request.xhr? do |f|
   = f.label :title, 'Title'
   = f.text_field :title
+  = f.label :lesson_duration, 'Lesson Duration'
+  = f.number_field :lesson_duration
   = error_tag @schedule.errors[:title]
   = f.submit 'OK'

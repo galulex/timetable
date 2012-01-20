@@ -8,8 +8,6 @@
 */
 
 form {
-  width: 400px;
-  text-align: right;
 }
 
 input {
@@ -23,10 +21,8 @@ input[type=submit] {
 }
 
 label {
-  display: inline-block;
+  display: block;
   margin: 5px 10px 0 0;
-  width: 100px;
-  text-align: right;
 }
 
 select {
