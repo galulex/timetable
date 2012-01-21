@@ -6,7 +6,11 @@ class ScheduleCall < ActiveRecord::Base
   belongs_to :schedule
 
   def finish_at
-    start_at + schedule.lesson_duration
+    start_at + schedule.lesson_duration.to_i
+  end
+
+  def time
+    [start_at.strftime('%R'), finish_at.strftime('%R')].join('-')
   end
 
 end

@@ -1,7 +1,5 @@
 = form_for [@schedule, @schedule_call], :remote => true do |f|
   = f.label :start_at, 'Start at'
-  = f.time_select :start_at, :minute_step => 10, :class => :time_select
+  = f.time_select :start_at, :minute_step => 5, :class => :time_select
   = error_tag @schedule_call.errors[:start_at]
-  = label_tag :finish_at, 'Finish at'
-  %span=# @schedule_call.start_at + @schedule.lesson_duration
   = f.submit :OK

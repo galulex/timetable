@@ -8,9 +8,7 @@
   = f.label :audience_id, 'Audience'
   = f.select :audience_id, @schedule.audiences.map{ |t| [t.title, t.id] }
   = error_tag @lesson.errors[:audience_id]
-  = f.label :schedule_call_id, 'Schedule Call'
-  = f.select :schedule_call_id, @schedule.schedule_calls.map{ |t| [t.number, t.id] }
-  = error_tag @lesson.errors[:schedule_call_id]
   = f.hidden_field :group_id, :value => @lesson.group_id
   = f.hidden_field :day_id, :value => @lesson.day_id
+  = f.hidden_field :schedule_call_id, :value => @lesson.schedule_call_id
   = f.submit :OK

@@ -1,5 +1,5 @@
-- if !@user
-  $('form#new_session').html("#{escape_javascript(render :partial => 'form')}");
-- else
+- if @user && @user.approved?
   $(document).trigger('close.lazybox');
   window.location = "#{ schedules_path }";
+- else
+  $('form#new_session').html("#{escape_javascript(render :partial => 'form')}");

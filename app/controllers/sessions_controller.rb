@@ -14,8 +14,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = Dispatcher.authenticate(params[:email], params[:password])
-    session[:user_id] = @user.id if @user
-    @message = 'Invalid email or password' unless @user
+    if @user.nil?
+      @message = 'Invalid email or password'
+    else
+      if @user.approved?
+        session[:user_id] = @user.id
+      else
+        @message = 'Your account is not approved yet'
+      end
+    end
   end
 
   def destroy
