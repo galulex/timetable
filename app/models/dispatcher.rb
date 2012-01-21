@@ -3,15 +3,15 @@ class Dispatcher < User
 
   attr_accessor :password
 
-  validates :password, :presence => true, :confirmation => true, :on => :update
-  validates :first_name, :last_name, :presence => true, :on => :update
+  validates :password, :presence => true, :confirmation => true, :on => :create
+  validates :first_name, :last_name, :presence => true
   validates :email, :presence => true,
                     :length => { :minimum => 3, :maximum => 254, :allow_blank => true },
                     :uniqueness => true,
                     :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :allow_blank => true }
 
   before_save :encrypt_password
-  before_create :send_invitation
+  before_create :generate_token
 
   has_many :schedules, :dependent => :delete_all
 
@@ -31,9 +31,8 @@ class Dispatcher < User
     end
   end
 
-  def send_invitation
+  def generate_token
     self.token = Digest::SHA1.hexdigest(Time.now.to_s)
-    UserMailer.invite(self).deliver
   end
 
 end

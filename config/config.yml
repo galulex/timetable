@@ -7,5 +7,8 @@ development:
     secret: d909c25d53bc8ab5f16d27c082b7c2f3
 
 test:
+  admin:
+    name: admin
+    password: admin
 
 production:

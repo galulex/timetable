@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :password_digest
       t.string  :password_salt
       t.string  :token
+      t.boolean :approved, :default => false
 
       t.timestamps
     end

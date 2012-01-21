@@ -4,13 +4,15 @@ class Admin::UsersController < AdminController
    @users = User.all
   end
 
-  def new
-    @dispatcher = Dispatcher.new
-  end
-
   def create
-    @dispatcher = Dispatcher.create(params[:dispatcher])
-    p @dispatcher.errors
+    @users = Dispatcher.where(:id => params[:user_ids], :approved => false)
+    unless @users.blank?
+      @users.each do |user|
+        user.update_attribute(:approved, true)
+        UserMailer.invite(user).deliver
+      end
+    end
+    redirect_to admin_users_path
   end
 
 end

@@ -3,7 +3,7 @@ Timetable::Application.routes.draw do
   resource :admin, :controller => :admin, :only => :show
 
   namespace :admin do
-    resources :users, :only => [:index, :new, :create]
+    resources :users, :only => [:index, :create]
   end
 
   resources :users

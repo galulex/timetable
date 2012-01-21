@@ -1,4 +1,4 @@
-= form_for @schedule, :remote => request.xhr? do |f|
+= form_for @schedule, :remote => true do |f|
   = f.label :title, 'Title'
   = f.text_field :title
   = f.label :lesson_duration, 'Lesson Duration'

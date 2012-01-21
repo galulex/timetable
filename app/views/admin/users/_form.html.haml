@@ -1,7 +1,0 @@
-= form_for @dispatcher, :url => admin_users_path, :remote => request.xhr? do |f|
-  = f.label :email, 'Email'
-  = f.text_field :email
-  = error_tag @dispatcher.errors[:email]
-  = f.label :institution_id, 'Institution'
-  = f.select :institution_id, ''
-  = f.submit 'OK'

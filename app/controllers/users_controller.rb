@@ -1,17 +1,30 @@
 class UsersController < ApplicationController
 
+  def new
+    @dispatcher = Dispatcher.new
+  end
+
+  def create
+    @dispatcher = Dispatcher.new(params[:dispatcher])
+    flash[:notice] = 'Thanks for regisration. We will send you invitation after admin approval' if @dispatcher.save
+  end
+
   def edit
-    @dispatcher = Dispatcher.find_by_token(params[:id])
-    redirect_to :root if @dispatcher.nil?
+    if current_user
+      @dispatcher = Dispatcher.find(params[:id])
+    else
+      @dispatcher = Dispatcher.find_by_token(params[:id])
+      unless @dispatcher.nil?
+        @dispatcher.update_attribute(:token, nil)
+        flash[:notice] = 'Thank you for registration. Please login with your credentials to continue'
+      end
+      redirect_to :root
+    end
   end
 
   def update
-    @dispatcher = Dispatcher.find_by_token(params[:id])
-    if @dispatcher.update_attributes(params[:dispatcher])
-      redirect_to :root, :notice => 'Thank you for registration. Please login with your credentials to continue'
-    else
-      render :action => :edit
-    end
+    @dispatcher = current_user
+    @dispatcher.update_attributes(params[:dispatcher])
   end
 
 end

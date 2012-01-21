@@ -1,0 +1,5 @@
+- if @dispatcher.errors.any?
+  $('form#new_dispatcher').html("#{escape_javascript(render :partial => 'form')}");
+-else
+  $(document).trigger('close.lazybox');
+  window.location = "#{ root_path }";
