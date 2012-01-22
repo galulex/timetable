@@ -3,3 +3,6 @@
 %p= lesson.teacher.name
 
 %p= lesson.audience.title
+
+= link_to 'edit', edit_schedule_lesson_path(@schedule, lesson), :rel => :lazybox
+= link_to 'X', schedule_lesson_path(@schedule, lesson), :method => :delete

@@ -24,6 +24,7 @@ class LessonsController < ApplicationController
   def destroy
     @lesson = @schedule.lessons.find(params[:id])
     @lesson.destroy
+    redirect_to schedule_path(@schedule)
   end
 
   private
