@@ -8,6 +8,10 @@
 = link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
 = link_to 'Manage Schedule Calls', schedule_schedule_calls_path(@schedule)
 = link_to '+', new_schedule_schedule_call_path(@schedule), :rel => :lazybox
+%br
+= link_to 'All', schedule_path(@schedule)
+- @schedule.days.each_pair do |i, day|
+  = link_to day, schedule_path(@schedule, :day_id => i)
 
 - if @schedule.groups.any?
   %table
@@ -18,7 +22,7 @@
           %th{:id => "group_#{group.id}"}= group.name
         %th.new_group= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
     %tbody
-      - Schedule::DAYS.each_pair do |i, day|
+      - @days.each_pair do |i, day|
         %tr
           %th{ :rowspan => @schedule.schedule_calls.size + 1 }= day
         - @schedule.schedule_calls.each do |call|
@@ -27,7 +31,7 @@
             %th= call.time
             - @schedule.groups.each do |group|
               %td
-                - if lesson = @schedule.lessons.find_by_group_id_and_day_id_and_schedule_call_id(group.id, i, call.id)
+                - if lesson = @lessons.find_by_group_id_and_day_id_and_schedule_call_id(group.id, i, call.id)
                   = render :partial => 'lesson', :object => lesson
                 - else
                   = link_to('+', new_schedule_lesson_path(@schedule, :group_id => group.id, :day_id => i, :schedule_call_id => call.id), :rel => :lazybox)

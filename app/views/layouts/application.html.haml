@@ -16,5 +16,5 @@
         = link_to 'Login with facebook', facebook_url
     .message= flash[:notice] if flash[:notice]
     .message= flash[:error] if flash[:error]
-
-    = yield
+    .container
+      = yield

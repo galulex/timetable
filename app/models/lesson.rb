@@ -8,4 +8,6 @@ class Lesson < ActiveRecord::Base
   belongs_to :group
   belongs_to :schedule_call
 
+  scope :for_day, lambda { |day| where(:day_id => day) unless day.blank? }
+
 end

@@ -1,5 +1,6 @@
 class Schedule < ActiveRecord::Base
 
+  #shit code. Needs to changed
   DAYS = { 1 => 'Mon', 2 => 'Tue', 3 => 'Wed', 4 => 'Thu', 5 => 'Fri', 6 => 'Sat' }
 
   validates :title, :presence => true
@@ -10,5 +11,10 @@ class Schedule < ActiveRecord::Base
   has_many :lessons, :dependent => :delete_all
   has_many :schedule_calls, :dependent => :delete_all
   belongs_to :dispatcher
+
+
+  def days
+    DAYS
+  end
 
 end
