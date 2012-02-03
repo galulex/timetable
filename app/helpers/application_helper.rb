@@ -10,4 +10,8 @@ module ApplicationHelper
     fb_client.authorize_url(:scope => 'email')
   end
 
+  def schedule_action
+    @schedule.published? ? 'Unpublish' : 'Publish'
+  end
+
 end

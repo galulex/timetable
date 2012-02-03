@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = @schedule.groups.find(params[:id])
-    @group.update_attributes(params[:group])
+    @group.update_attributes(params[:group]) unless @schedule.published?
     render :action => :create
   end
 

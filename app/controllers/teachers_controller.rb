@@ -21,7 +21,7 @@ class TeachersController < ApplicationController
 
   def update
     @teacher = @schedule.teachers.find(params[:id])
-    @teacher.update_attributes(params[:teacher])
+    @teacher.update_attributes(params[:teacher]) unless @schedule.published?
     render :action => :create
   end
 

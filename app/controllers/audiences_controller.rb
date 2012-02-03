@@ -21,7 +21,7 @@ class AudiencesController < ApplicationController
 
   def update
     @audience = @schedule.audiences.find(params[:id])
-    @audience.update_attributes(params[:audience])
+    @audience.update_attributes(params[:audience]) unless @schedule.published?
     render :action => :create
   end
 

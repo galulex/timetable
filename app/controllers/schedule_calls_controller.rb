@@ -21,7 +21,7 @@ class ScheduleCallsController < ApplicationController
 
   def update
     @schedule_call = @schedule.schedule_calls.find(params[:id])
-    @schedule_call.update_attributes(params[:schedule_call])
+    @schedule_call.update_attributes(params[:schedule_call]) unless @schedule.published?
     render :action => :create
   end
 

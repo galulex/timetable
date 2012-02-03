@@ -19,4 +19,10 @@ class SchedulesController < ApplicationController
     @days = { params[:day_id] => @days[params[:day_id].to_i] } if params[:day_id]
   end
 
+  def update
+    @schedule = current_user.schedules.find(params[:id])
+    @schedule.update_attribute(:published, !@schedule.published?) unless params[:schedule]
+    redirect_to schedule_path(@schedule)
+  end
+
 end

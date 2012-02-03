@@ -2,5 +2,6 @@
   %td= group.name
   %td= group.teacher.name unless group.teacher.nil?
   %td
-    = link_to('edit', edit_schedule_group_path(@schedule, group), :rel => :lazybox)
-    = link_to('×', schedule_group_path(@schedule, group), :method => :delete, :remote => true)
+    - unless @schedule.published?
+      = link_to('edit', edit_schedule_group_path(@schedule, group), :rel => :lazybox)
+      = link_to('×', schedule_group_path(@schedule, group), :method => :delete, :remote => true)
