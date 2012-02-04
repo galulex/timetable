@@ -4,6 +4,7 @@ class Teacher < ActiveRecord::Base
   validates :hours, :numericality => true
 
   has_many :lessons
+  has_many :replacements
   has_many :groups
   belongs_to :schedule
 

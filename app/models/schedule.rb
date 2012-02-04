@@ -9,6 +9,7 @@ class Schedule < ActiveRecord::Base
   has_many :audiences, :dependent => :delete_all
   has_many :groups, :dependent => :delete_all
   has_many :lessons, :dependent => :delete_all
+  has_many :replacements, :dependent => :delete_all
   has_many :schedule_calls, :dependent => :delete_all
   belongs_to :dispatcher
 
