@@ -14,7 +14,12 @@ Timetable::Application.routes.draw do
     resources :teachers
     resources :audiences
     resources :groups
-    resources :lessons
+    resources :lessons do
+      member do
+        get :copy
+        post :paste
+      end
+    end
     resources :schedule_calls
     resources :replacements
   end
