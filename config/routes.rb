@@ -16,6 +16,7 @@ Timetable::Application.routes.draw do
     resources :groups
     resources :lessons
     resources :schedule_calls
+    resources :replacements
   end
 
   root :to => 'dashboard#index'

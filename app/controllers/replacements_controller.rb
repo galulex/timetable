@@ -8,6 +8,7 @@ class ReplacementsController < ApplicationController
 
   def create
     @replacement = @schedule.replacements.create(params[:replacement])
+    #send_notifications
   end
 
   def edit
