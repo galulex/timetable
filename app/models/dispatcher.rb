@@ -13,6 +13,10 @@ class Dispatcher < User
   before_create :generate_token
 
   has_many :schedules, :dependent => :delete_all
+  has_one :institution, :dependent => :destroy
+
+  accepts_nested_attributes_for :institution
+  attr_accessible :institution_attributes
 
   def self.authenticate(email, password)
     user = find_by_email(email)

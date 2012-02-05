@@ -2,5 +2,8 @@
   %td= user.email
   %td= user.name
   %td= user.type
-  %td= user.institution_id
-  %td= check_box_tag "user_ids[]", user.id, user.approved?
+  %td= user.institution.name
+  - if user.approved?
+    %td Approved
+  - else
+    %td= check_box_tag "user_ids[]", user.id, user.approved?
