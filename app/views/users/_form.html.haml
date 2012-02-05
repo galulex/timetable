@@ -8,8 +8,10 @@
   = f.label :last_name, 'Last Name'
   = f.text_field :last_name
   = error_tag @dispatcher.errors[:last_name]
-  = f.label :institution_id, 'Institution'
-  = f.select :institution_id, ''
+  = f.fields_for :institution, @dispatcher.institution || @dispatcher.build_institution do |form|
+    = form.label :name, 'Institution'
+    = form.text_field :name
+    = error_tag @dispatcher.institution.errors[:name]
   = f.label :password, 'Password'
   = f.password_field :password
   = error_tag @dispatcher.errors[:password]
