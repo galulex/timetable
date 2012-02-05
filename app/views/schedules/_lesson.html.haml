@@ -12,3 +12,4 @@
 - else
   = link_to 'edit', edit_schedule_lesson_path(@schedule, lesson), :rel => :lazybox
   = link_to 'X', schedule_lesson_path(@schedule, lesson), :method => :delete
+= link_to 'copy', copy_schedule_lesson_path(@schedule, lesson)
