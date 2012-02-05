@@ -4,4 +4,5 @@
   = error_tag @group.errors[:name]
   = f.label :teacher_id, 'Teacher'
   = f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
+  %br
   = f.submit :OK
