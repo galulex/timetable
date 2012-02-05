@@ -9,10 +9,10 @@
     .header
       - if current_user
         = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox
-        = link_to "Sign Out", session_path, :method => :delete
+        = link_to "Sign Out", session_path, :method => :delete, :class => 'orange button'
       - else
-        = link_to "Sign In", new_session_path, :rel => :lazybox unless params[:controller] == 'sessions'
-        = link_to "Sign Up", new_user_path, :rel => :lazybox
+        = link_to "Sign In", new_session_path, :rel => :lazybox, :class => 'orange button' unless params[:controller] == 'sessions'
+        = link_to "Sign Up", new_user_path, :rel => :lazybox, :class => 'orange button'
         = link_to 'Login with facebook', facebook_url
     .message= flash[:notice] if flash[:notice]
     .message= flash[:error] if flash[:error]
