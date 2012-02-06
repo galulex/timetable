@@ -7,13 +7,14 @@
     = csrf_meta_tags
   %body
     .header
+      - unless @schedule.nil?
+        = link_to 'Manage Teachers', schedule_teachers_path(@schedule), :class => 'gray button'
+        = link_to 'Manage Audiences', schedule_audiences_path(@schedule), :class => 'gray button'
+        = link_to 'Manage Groups', schedule_groups_path(@schedule), :class => 'gray button'
+        = link_to 'Manage Schedule Calls', schedule_schedule_calls_path(@schedule), :class => 'gray button'
       - if current_user
-        = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox
+        = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox, :class => 'orange button'
         = link_to "Sign Out", session_path, :method => :delete, :class => 'orange button'
-      - else
-        = link_to "Sign In", new_session_path, :rel => :lazybox, :class => 'orange button' unless params[:controller] == 'sessions'
-        = link_to "Sign Up", new_user_path, :rel => :lazybox, :class => 'orange button'
-        = link_to 'Login with facebook', facebook_url
     .message= flash[:notice] if flash[:notice]
     .message= flash[:error] if flash[:error]
     .container

@@ -1,24 +1,15 @@
-%h1= @schedule.title
-
-= link_to 'Manage Teachers', schedule_teachers_path(@schedule)
-= link_to '+', new_schedule_teacher_path(@schedule), :rel => :lazybox
-= link_to 'Manage Audiences', schedule_audiences_path(@schedule)
-= link_to '+', new_schedule_audience_path(@schedule), :rel => :lazybox
-= link_to 'Manage Groups', schedule_groups_path(@schedule)
-= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
-= link_to 'Manage Schedule Calls', schedule_schedule_calls_path(@schedule)
-= link_to '+', new_schedule_schedule_call_path(@schedule), :rel => :lazybox
-= link_to schedule_action, schedule_path(@schedule), :method => :put
-%br
-= link_to 'All', schedule_path(@schedule)
-- @schedule.days.each_pair do |i, day|
-  = link_to day, schedule_path(@schedule, :day_id => i)
+.menu
+  = link_to 'All', schedule_path(@schedule)
+  - @schedule.days.each_pair do |i, day|
+    = link_to day, schedule_path(@schedule, :day_id => i)
+= link_to schedule_action, schedule_path(@schedule), :method => :put, :class => @schedule.published? ? 'red button' : 'green button'
 
 - if @schedule.groups.any?
   %table
     %thead
       %tr
         %th{ :colspan => 2 }
+          %h1= @schedule.title
         - @schedule.groups.each do |group|
           %th{:id => "group_#{group.id}"}= group.name
         %th.new_group= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
