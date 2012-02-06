@@ -1,0 +1,6 @@
+en:
+  try_more: 'Some thing has went wrong. Try one more time'
+  invalid_credentials: 'Invalid email or password'
+  registration_thanks_and_invite: 'Thanks for regisration. We will send you invitation after admin approval'
+  registration_thanks_and_login: 'Thank you for registration. Please login with your credentials to continue'
+  not_approved_account: 'Your account is not approved yet'

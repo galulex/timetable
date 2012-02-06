@@ -8,19 +8,19 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to :root
     else
-      redirect_to :root, :error => 'Some thing has went wrong. Try one more time'
+      redirect_to :root, :error => t('.try_more')
     end
   end
 
   def create
     @user = Dispatcher.authenticate(params[:email], params[:password])
     if @user.nil?
-      @message = 'Invalid email or password'
+      @message = t('.invalid_credentials')
     else
       if @user.approved?
         session[:user_id] = @user.id
       else
-        @message = 'Your account is not approved yet'
+        @message = t('.not_approved_account')
       end
     end
   end

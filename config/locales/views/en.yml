@@ -1,0 +1,5 @@
+en:
+  schedules:
+    show:
+      unpublish: "Unpublish"
+      publish: "Publish"

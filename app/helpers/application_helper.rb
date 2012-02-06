@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def schedule_action
-    @schedule.published? ? 'Unpublish' : 'Publish'
+    @schedule.published? ? t('.unpublish') : t('.publish')
   end
 
 end
