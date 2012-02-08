@@ -7,27 +7,30 @@ class TeachersController < ApplicationController
   end
 
   def new
-    @teacher = Teacher.new
+    @object = Teacher.new
+    render 'shared/new'
   end
 
   def create
-    @teacher = @schedule.teachers.create(params[:teacher])
+    @object = @schedule.teachers.create(params[:teacher])
+    render 'shared/create'
   end
 
   def edit
-    @teacher = @schedule.teachers.find(params[:id])
-    render :action => :new
+    @object = @schedule.teachers.find(params[:id])
+    render 'shared/edit'
   end
 
   def update
-    @teacher = @schedule.teachers.find(params[:id])
-    @teacher.update_attributes(params[:teacher]) unless @schedule.published?
-    render :action => :create
+    @object = @schedule.teachers.find(params[:id])
+    @object.update_attributes(params[:teacher]) unless @schedule.published?
+    render 'shared/update'
   end
 
   def destroy
-    @teacher = @schedule.teachers.find(params[:id])
-    @teacher.destroy
+    @object = @schedule.teachers.find(params[:id])
+    @object.destroy
+    render 'shared/destroy'
   end
 
   private

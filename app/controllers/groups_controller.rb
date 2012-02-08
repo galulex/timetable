@@ -7,27 +7,30 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @object = Group.new
+    render 'shared/new'
   end
 
   def create
-    @group = @schedule.groups.create(params[:group])
+    @object = @schedule.groups.create(params[:group])
+    render 'shared/create'
   end
 
   def edit
-    @group = @schedule.groups.find(params[:id])
-    render :action => :new
+    @object = @schedule.groups.find(params[:id])
+    render 'shared/edit'
   end
 
   def update
-    @group = @schedule.groups.find(params[:id])
-    @group.update_attributes(params[:group]) unless @schedule.published?
-    render :action => :create
+    @object = @schedule.groups.find(params[:id])
+    @object.update_attributes(params[:group]) unless @schedule.published?
+    render 'shared/update'
   end
 
   def destroy
-    @group = @schedule.groups.find(params[:id])
-    @group.destroy
+    @object = @schedule.groups.find(params[:id])
+    @object.destroy
+    render 'shared/destroy'
   end
 
   private

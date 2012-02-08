@@ -2,7 +2,7 @@
 
 %p= lesson.teacher.name
 
-%p= lesson.audience.title
+%p= lesson.audience.title unless lesson.audience.nil?
 
 - if @schedule.published
   - if lesson.replacements.empty?

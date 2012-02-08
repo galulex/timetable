@@ -1,5 +1,5 @@
 - unless @groups.nil?
-  %table.groups
+  %table#groups
     %tbody
       = render :partial => 'group', :collection => @groups
-= link_to '+', new_schedule_group_path(@group), :id => :new_group, :rel => :lazybox
+= link_to '+', new_schedule_group_path, :id => :add_group, :remote => true

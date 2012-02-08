@@ -1,7 +1,7 @@
-%tr.group{:id => "group_#{group.id}"}
+%tr{:id => "group_#{group.id}"}
   %td= group.name
   %td= group.teacher.name unless group.teacher.nil?
   %td
     - unless @schedule.published?
-      = link_to('edit', edit_schedule_group_path(@schedule, group), :rel => :lazybox)
-      = link_to('×', schedule_group_path(@schedule, group), :method => :delete, :remote => true)
+      = link_to 'edit', edit_schedule_group_path(@schedule, group), :remote => true
+      = link_to '×', schedule_group_path(@schedule, group), :method => :delete, :remote => true

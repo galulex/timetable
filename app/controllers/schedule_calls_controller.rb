@@ -7,27 +7,30 @@ class ScheduleCallsController < ApplicationController
   end
 
   def new
-    @schedule_call = ScheduleCall.new
+    @object = ScheduleCall.new
+    render 'shared/new'
   end
 
   def create
-    @schedule_call = @schedule.schedule_calls.create(params[:schedule_call])
+    @object = @schedule.schedule_calls.create(params[:schedule_call])
+    render 'shared/create'
   end
 
   def edit
-    @schedule_call = @schedule.schedule_calls.find(params[:id])
-    render :action => :new
+    @object = @schedule.schedule_calls.find(params[:id])
+    render 'shared/edit'
   end
 
   def update
-    @schedule_call = @schedule.schedule_calls.find(params[:id])
-    @schedule_call.update_attributes(params[:schedule_call]) unless @schedule.published?
-    render :action => :create
+    @object = @schedule.schedule_calls.find(params[:id])
+    @object.update_attributes(params[:schedule_call]) unless @schedule.published?
+    render 'shared/update'
   end
 
   def destroy
-    @schedule_call = @schedule.schedule_calls.find(params[:id])
-    @schedule_call.destroy
+    @object = @schedule.schedule_calls.find(params[:id])
+    @object.destroy
+    render 'shared/destroy'
   end
 
   private

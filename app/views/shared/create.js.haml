@@ -1,0 +1,5 @@
+- if @object.errors.any?
+  $("##{@object.class.to_s.underscore}_#{@object.id}").html("#{escape_javascript(render :partial => 'form')}");
+- else
+  $(document).trigger('close.lazybox');
+  window.location.reload();

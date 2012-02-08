@@ -1,6 +1,6 @@
-%tr.audience{:id => "audience_#{audience.id}"}
+%tr{:id => "audience_#{audience.id}"}
   %td= audience.title
   %td
     - unless @schedule.published?
-      = link_to('edit', edit_schedule_audience_path(@schedule, audience), :rel => :lazybox)
+      = link_to('edit', edit_schedule_audience_path(@schedule, audience), :remote => true)
       = link_to('×', schedule_audience_path(@schedule, audience), :method => :delete, :remote => true)

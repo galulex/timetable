@@ -1,7 +1,7 @@
-%tr.schedule_call{:id => "schedule_call_#{schedule_call.id}"}
+%tr{:id => "schedule_call_#{schedule_call.id}"}
   %td= schedule_call.start_at
   %td= schedule_call.finish_at
   %td
     - unless @schedule.published?
-      = link_to('edit', edit_schedule_schedule_call_path(@schedule, schedule_call), :rel => :lazybox)
-      = link_to('×', schedule_schedule_call_path(@schedule, schedule_call), :method => :delete, :remote => true)
+      = link_to 'edit', edit_schedule_schedule_call_path(@schedule, schedule_call), :remote => true
+      = link_to '×', schedule_schedule_call_path(@schedule, schedule_call), :method => :delete, :remote => true

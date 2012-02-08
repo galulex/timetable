@@ -1,5 +1,5 @@
 - unless @teachers.nil?
-  %table.teachers
+  %table#teachers
     %tbody
       = render :partial => 'teacher', :collection => @teachers
-= link_to '+', new_schedule_teacher_path(@schedule), :id => :new_teacher, :rel => :lazybox
+= link_to '+', new_schedule_teacher_path, :id => :add_teacher, :remote => true

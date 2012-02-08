@@ -1,8 +1,8 @@
-%tr.teacher{:id => "teacher_#{teacher.id}"}
+%tr{:id => "teacher_#{teacher.id}"}
   %td= teacher.first_name
   %td= teacher.last_name
   %td= teacher.hours
   %td
     - unless @schedule.published?
-      = link_to('edit', edit_schedule_teacher_path(@schedule, teacher), :rel => :lazybox)
-      = link_to('×', schedule_teacher_path(@schedule, teacher), :method => :delete, :remote => true)
+      = link_to 'edit', edit_schedule_teacher_path(@schedule, teacher), :remote => true
+      = link_to '×', schedule_teacher_path(@schedule, teacher), :method => :delete, :remote => true

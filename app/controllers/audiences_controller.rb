@@ -7,27 +7,30 @@ class AudiencesController < ApplicationController
   end
 
   def new
-    @audience = Audience.new
+    @object = Audience.new
+    render 'shared/new'
   end
 
   def create
-    @audience = @schedule.audiences.create(params[:audience])
+    @object = @schedule.audiences.create(params[:audience])
+    render 'shared/create'
   end
 
   def edit
-    @audience = @schedule.audiences.find(params[:id])
-    render :action => :new
+    @object = @schedule.audiences.find(params[:id])
+    render 'shared/edit'
   end
 
   def update
-    @audience = @schedule.audiences.find(params[:id])
-    @audience.update_attributes(params[:audience]) unless @schedule.published?
-    render :action => :create
+    @object = @schedule.audiences.find(params[:id])
+    @object.update_attributes(params[:audience]) unless @schedule.published?
+    render 'shared/update'
   end
 
   def destroy
-    @audience = @schedule.audiences.find(params[:id])
-    @audience.destroy
+    @object = @schedule.audiences.find(params[:id])
+    @object.destroy
+    render 'shared/destroy'
   end
 
   private
