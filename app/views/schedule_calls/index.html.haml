@@ -1,5 +1,12 @@
 - unless @schedule_calls.nil?
   %table#schedule_calls
+    %thead
+      %tr
+        %th Start at
+        %th Finish at
+        %th Actions
     %tbody
       = render :partial => 'schedule_call', :collection => @schedule_calls
-= link_to '+', new_schedule_schedule_call_path, :id => :new_schedule_call, :remote => true
+    %tfoot
+      %tr
+        %td= link_to '+', new_schedule_schedule_call_path, :id => :new_schedule_call, :remote => true

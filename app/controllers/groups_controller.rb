@@ -8,7 +8,10 @@ class GroupsController < ApplicationController
 
   def new
     @object = Group.new
-    render 'shared/new'
+    respond_to do |format|
+      format.html { render :layout => false }
+      format.js { render 'shared/new' }
+    end
   end
 
   def create

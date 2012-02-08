@@ -1,4 +1,6 @@
 table {
+  margin: 0 auto;
+  margin-top: 20px;
   border-collapse: collapse;
   th {
     padding: 10px;
@@ -12,14 +14,17 @@ table {
     background-color: #DEF3CA;
     border: 1px solid black;
     color: #666;
-    min-width: 100px;
-    min-height: 100px;
+    width: 300px;
     a.add_lesson_link, a.add_replacement_link {
       text-decoration: none;
     }
+    text-align: center;
   }
-  th:empty, th.new_group {
+  th:empty, th.new_group, tfoot tr td {
     background: transparent;
     border: none;
+  }
+  input, select {
+    width: 300px;
   }
 }

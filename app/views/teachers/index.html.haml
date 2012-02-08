@@ -1,5 +1,13 @@
 - unless @teachers.nil?
   %table#teachers
+    %thead
+      %tr
+        %th First Name
+        %th Last Name
+        %th Hours
+        %th Actions
     %tbody
       = render :partial => 'teacher', :collection => @teachers
-= link_to '+', new_schedule_teacher_path, :id => :add_teacher, :remote => true
+    %tfoot
+      %tr
+        %td= link_to '+', new_schedule_teacher_path, :id => :add_teacher, :remote => true

@@ -8,10 +8,10 @@
   %body
     .header
       - unless @schedule.nil?
-        = link_to 'Manage Teachers', schedule_teachers_path(@schedule), :class => 'gray button'
-        = link_to 'Manage Audiences', schedule_audiences_path(@schedule), :class => 'gray button'
-        = link_to 'Manage Groups', schedule_groups_path(@schedule), :class => 'gray button'
-        = link_to 'Manage Schedule Calls', schedule_schedule_calls_path(@schedule), :class => 'gray button'
+        = link_to 'Teachers', schedule_teachers_path(@schedule), :class => 'gray button'
+        = link_to 'Audiences', schedule_audiences_path(@schedule), :class => 'gray button'
+        = link_to 'Groups', schedule_groups_path(@schedule), :class => 'gray button'
+        = link_to 'Schedule Calls', schedule_schedule_calls_path(@schedule), :class => 'gray button'
       - if current_user
         = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox, :class => 'orange button'
         = link_to "Sign Out", session_path, :method => :delete, :class => 'orange button'

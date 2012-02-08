@@ -1,5 +1,12 @@
 - unless @groups.nil?
   %table#groups
+    %thead
+      %tr
+        %th Name
+        %th Teacher
+        %th Actions
     %tbody
       = render :partial => 'group', :collection => @groups
-= link_to '+', new_schedule_group_path, :id => :add_group, :remote => true
+    %tfoot
+      %tr
+        %td= link_to '+', new_schedule_group_path, :id => :add_group, :remote => true

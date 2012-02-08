@@ -1,5 +1,11 @@
 - unless @audiences.nil?
   %table#audiences
+    %thead
+      %tr
+        %th Title
+        %th Actions
     %tbody
       = render :partial => 'audience', :collection => @audiences
-= link_to '+', new_schedule_audience_path, :id => :add_audience, :remote => true
+    %tfoot
+      %tr
+        %td= link_to '+', new_schedule_audience_path, :id => :add_audience, :remote => true
