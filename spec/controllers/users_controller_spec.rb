@@ -51,7 +51,7 @@ describe UsersController do
       controller.stub(:current_user).and_return(dispatcher)
     end
     it 'should update user' do
-      put :update, :format => :js, :id => dispatcher.id, :dispatcher => dispatcher_params
+      put :update, :format => :js, :id => dispatcher.id, :dispatcher => dispatcher_params.delete('password')
       assigns[:dispatcher].errors.should be_blank
       response.should render_template :update
     end

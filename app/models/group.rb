@@ -5,5 +5,6 @@ class Group < ActiveRecord::Base
   has_many :lessons, :dependent => :delete_all
   has_many :replacements, :dependent => :delete_all
   belongs_to :teacher
+  belongs_to :schedule
 
 end
