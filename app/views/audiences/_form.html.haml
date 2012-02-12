@@ -1,4 +1,4 @@
 %td{ :colspan => 2 }
   = form_for [@schedule, @object], :remote => true do |f|
     = f.text_field :title
-    = f.submit :OK
+    = f.submit t(".ok")

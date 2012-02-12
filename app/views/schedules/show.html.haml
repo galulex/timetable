@@ -1,5 +1,5 @@
 .menu
-  = link_to 'All', schedule_path(@schedule)
+  = link_to t(".all"), schedule_path(@schedule)
   - @schedule.days.each_pair do |i, day|
     = link_to day, schedule_path(@schedule, :day_id => i)
 = link_to schedule_action, schedule_path(@schedule), :method => :put, :class => @schedule.published? ? 'red button' : 'green button'
@@ -18,7 +18,6 @@
         %tr
           %th{ :rowspan => @schedule.schedule_calls.size + 1 }= day
         - @schedule.schedule_calls.each do |call|
-
           %tr
             %th= call.time
             - @schedule.groups.each do |group|
@@ -27,4 +26,4 @@
                   = render :partial => 'lesson', :object => lesson
                 - else
                   = link_to('+', new_schedule_lesson_path(@schedule, :group_id => group.id, :day_id => i, :schedule_call_id => call.id), :rel => :lazybox, :class => 'add_lesson_link')
-                  = link_to('paste', paste_schedule_lesson_path(@schedule, :day_id => i, :schedule_call_id => call.id, :group_id => group.id), :method => :post) unless session[:lesson_id].nil?
+                  = link_to(t(".paste"), paste_schedule_lesson_path(@schedule, :day_id => i, :schedule_call_id => call.id, :group_id => group.id), :method => :post) unless session[:lesson_id].nil?

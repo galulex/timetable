@@ -2,10 +2,10 @@
   %table#teachers
     %thead
       %tr
-        %th First Name
-        %th Last Name
-        %th Hours
-        %th Actions
+        %th= t(".first_name")
+        %th= t(".last_name")
+        %th= t(".hours")
+        %th= t(".actions")
     %tbody
       = render :partial => 'teacher', :collection => @teachers
     %tfoot

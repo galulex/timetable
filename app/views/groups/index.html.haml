@@ -2,9 +2,9 @@
   %table#groups
     %thead
       %tr
-        %th Name
-        %th Teacher
-        %th Actions
+        %th= t(".name")
+        %th= t(".teacher")
+        %th= t(".actions")
     %tbody
       = render :partial => 'group', :collection => @groups
     %tfoot

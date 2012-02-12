@@ -2,4 +2,4 @@
   = form_for [@schedule, @object], :remote => true do |f|
     = f.text_field :name
     = f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
-    = f.submit :OK
+    = f.submit t(".ok")

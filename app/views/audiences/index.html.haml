@@ -2,8 +2,8 @@
   %table#audiences
     %thead
       %tr
-        %th Title
-        %th Actions
+        %th= t(".title")
+        %th= t(".actions")
     %tbody
       = render :partial => 'audience', :collection => @audiences
     %tfoot

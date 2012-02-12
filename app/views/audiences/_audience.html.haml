@@ -2,5 +2,5 @@
   %td= audience.title
   %td
     - unless @schedule.published?
-      = link_to('edit', edit_schedule_audience_path(@schedule, audience), :remote => true)
-      = link_to('×', schedule_audience_path(@schedule, audience), :method => :delete, :remote => true)
+      = link_to(t(".edit"), edit_schedule_audience_path(@schedule, audience), :remote => true)
+      = link_to(t(".delete"), schedule_audience_path(@schedule, audience), :method => :delete, :remote => true)

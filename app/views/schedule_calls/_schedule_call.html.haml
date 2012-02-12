@@ -3,5 +3,5 @@
   %td= schedule_call.finish_at
   %td
     - unless @schedule.published?
-      = link_to 'edit', edit_schedule_schedule_call_path(@schedule, schedule_call), :remote => true
-      = link_to '×', schedule_schedule_call_path(@schedule, schedule_call), :method => :delete, :remote => true
+      = link_to t(".edit"), edit_schedule_schedule_call_path(@schedule, schedule_call), :remote => true
+      = link_to t(".delete"), schedule_schedule_call_path(@schedule, schedule_call), :method => :delete, :remote => true

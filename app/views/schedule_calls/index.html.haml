@@ -2,9 +2,9 @@
   %table#schedule_calls
     %thead
       %tr
-        %th Start at
-        %th Finish at
-        %th Actions
+        %th= t(".start_at")
+        %th= t(".finish_at")
+        %th= t(".actions")
     %tbody
       = render :partial => 'schedule_call', :collection => @schedule_calls
     %tfoot

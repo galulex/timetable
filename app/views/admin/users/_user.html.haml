@@ -2,8 +2,8 @@
   %td= user.email
   %td= user.name
   %td= user.type
-  %td= user.institution.name
+  %td= user.institution.nil? ? "" : user.institution.name
   - if user.approved?
-    %td Approved
+    %td= t('.approved')
   - else
     %td= check_box_tag "user_ids[]", user.id, user.approved?

@@ -8,13 +8,13 @@
   %body
     .header
       - unless @schedule.nil?
-        = link_to 'Teachers', schedule_teachers_path(@schedule), :class => 'gray button'
-        = link_to 'Audiences', schedule_audiences_path(@schedule), :class => 'gray button'
-        = link_to 'Groups', schedule_groups_path(@schedule), :class => 'gray button'
-        = link_to 'Schedule Calls', schedule_schedule_calls_path(@schedule), :class => 'gray button'
+        = link_to t(".teachers"), schedule_teachers_path(@schedule), :class => 'gray button'
+        = link_to t(".audiences"), schedule_audiences_path(@schedule), :class => 'gray button'
+        = link_to t(".groups"), schedule_groups_path(@schedule), :class => 'gray button'
+        = link_to t(".schedule_calls"), schedule_schedule_calls_path(@schedule), :class => 'gray button'
       - if current_user
         = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox, :class => 'orange button'
-        = link_to "Sign Out", session_path, :method => :delete, :class => 'orange button'
+        = link_to t(".sign_out"), session_path, :method => :delete, :class => 'orange button'
     .message= flash[:notice] if flash[:notice]
     .message= flash[:error] if flash[:error]
     .container
