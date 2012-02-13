@@ -3,6 +3,11 @@ Factory.define :audience  do |a|
   a.association :schedule
 end
 
+Factory.define :institution  do |a|
+  a.name { Faker::Name.first_name }
+  a.association :dispatcher
+end
+
 Factory.define :teacher  do |t|
   t.first_name { Faker::Name.first_name }
   t.last_name { Faker::Name.last_name }
