@@ -46,12 +46,12 @@ describe LessonsController do
     it 'should update the lesson' do
       put :update, :schedule_id => schedule.id, :id => lesson.id, :lesson => valid_params, :format => :js
       assigns[:lesson].errors.should be_blank
-      response.should render_template :create
+      response.should render_template :update
     end
     it 'should not update the lesson' do
       put :update, :schedule_id => schedule.id, :id => lesson.id, :lesson => invalid_params, :format => :js
       assigns[:lesson].errors.should_not be_blank
-      response.should render_template :create
+      response.should render_template :update
     end
   end
 

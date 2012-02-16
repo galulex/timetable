@@ -11,4 +11,8 @@ class Lesson < ActiveRecord::Base
 
   scope :for_day, lambda { |day| where(:day_id => day) unless day.blank? }
 
+  def link_id
+    ['lesson', group_id, day_id, schedule_call_id].join('_')
+  end
+
 end

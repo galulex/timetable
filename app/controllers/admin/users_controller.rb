@@ -1,10 +1,10 @@
 class Admin::UsersController < AdminController
 
   def index
-   @users = User.all
+   @users = Dispatcher.all
   end
 
-  def create
+  def update
     @users = Dispatcher.where(:id => params[:user_ids], :approved => false)
     unless @users.blank?
       @users.each do |user|

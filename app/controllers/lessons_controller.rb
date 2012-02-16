@@ -18,13 +18,11 @@ class LessonsController < ApplicationController
   def update
     @lesson = @schedule.lessons.find(params[:id])
     @lesson.update_attributes(params[:lesson])
-    render :action => :create
   end
 
   def destroy
     @lesson = @schedule.lessons.find(params[:id])
     @lesson.destroy
-    redirect_to schedule_path(@schedule)
   end
 
   def copy

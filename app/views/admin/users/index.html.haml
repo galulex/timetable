@@ -1,7 +1,7 @@
 %h1= t(".users_page")
 
 - if @users.any?
-  = form_tag admin_users_path do
+  = form_tag admin_user_path(:all), :method => :put do
     %table
       %thead
         %tr

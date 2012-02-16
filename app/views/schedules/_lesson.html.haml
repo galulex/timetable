@@ -11,5 +11,5 @@
     = link_to t(".edit_replace"), edit_schedule_replacement_path(@schedule, lesson.replacements.last), :rel => :lazybox
 - else
   = link_to t(".edit"), edit_schedule_lesson_path(@schedule, lesson), :rel => :lazybox
-  = link_to t(".delete"), schedule_lesson_path(@schedule, lesson), :method => :delete
+  = link_to t(".delete"), schedule_lesson_path(@schedule, lesson), :method => :delete, :remote => true
 = link_to t(".copy"), copy_schedule_lesson_path(@schedule, lesson)

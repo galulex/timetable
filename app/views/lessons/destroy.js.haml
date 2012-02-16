@@ -1,1 +1,1 @@
-$('#lesson_#{@lesson.id}').fadeOut('slow', function() { $(this).remove() });
+$('#lesson_#{@lesson.id}').html("#{escape_javascript(lesson_link(@lesson))}");
