@@ -4,11 +4,6 @@ class Dispatcher < User
   has_secure_password
 
   validates :password, :presence => true, :confirmation => true, :on => :create
-  validates :first_name, :last_name, :presence => true
-  validates :email, :presence => true,
-                    :length => { :minimum => 3, :maximum => 254, :allow_blank => true },
-                    :uniqueness => true,
-                    :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :allow_blank => true }
 
   before_create :generate_token
 

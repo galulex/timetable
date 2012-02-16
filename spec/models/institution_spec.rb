@@ -6,6 +6,10 @@ describe Institution do
 
   context 'validations' do
 
+    it 'should be valid' do
+      institution.should be_valid
+    end
+
     it 'should not create institution without name' do
       institution.name = nil
       institution.save

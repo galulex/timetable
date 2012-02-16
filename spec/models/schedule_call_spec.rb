@@ -6,6 +6,10 @@ describe ScheduleCall do
 
   context 'validations' do
 
+    it 'should be valid' do
+      schedule_call.should be_valid
+    end
+
     it 'should not create schedule_call without start_at' do
       schedule_call.start_at = nil
       schedule_call.save

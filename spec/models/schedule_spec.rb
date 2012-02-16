@@ -6,6 +6,10 @@ describe Schedule do
 
   context 'validations' do
 
+    it 'should be valid' do
+      schedule.should be_valid
+    end
+
     it 'should not create schedule_call without title' do
       schedule.title = nil
       schedule.save

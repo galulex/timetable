@@ -6,6 +6,10 @@ describe Group do
 
   context 'validations' do
 
+    it 'should be valid' do
+      group.should be_valid
+    end
+
     it 'should not create group without name' do
       group.name = nil
       group.save

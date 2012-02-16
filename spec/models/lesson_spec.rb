@@ -6,6 +6,10 @@ describe Lesson do
 
   context 'validations' do
 
+    it 'should be valid' do
+      lesson.should be_valid
+    end
+
     it 'should not create lesson without name' do
       lesson.name = nil
       lesson.save

@@ -6,6 +6,10 @@ describe Teacher do
 
   context 'validations' do
 
+    it 'should be valid' do
+      teacher.should be_valid
+    end
+
     it 'should not create teacher without first_name' do
       teacher.first_name = nil
       teacher.save

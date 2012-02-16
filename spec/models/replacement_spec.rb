@@ -6,6 +6,10 @@ describe Replacement do
 
   context 'validations' do
 
+    it 'should be valid' do
+      replacement.should be_valid
+    end
+
     it 'should not create replacement without name' do
       replacement.name = nil
       replacement.save

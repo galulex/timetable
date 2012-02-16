@@ -6,6 +6,10 @@ describe Audience do
 
   context 'validations' do
 
+    it 'should be valid' do
+      audience.should be_valid
+    end
+
     it 'should not create audience without title' do
       audience.title = nil
       audience.save
