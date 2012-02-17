@@ -32,9 +32,9 @@ class LessonsController < ApplicationController
 
   def paste
     unless session[:lesson_id].nil?
-      new_lesson = Lesson.create(Lesson.find(session[:lesson_id]).attributes.merge(:group_id => params[:group_id], :day_id => params[:day_id], :schedule_call_id => params[:schedule_call_id]))
+      @lesson = Lesson.create(Lesson.find(session[:lesson_id]).attributes.merge(:group_id => params[:group_id], :day_id => params[:day_id], :schedule_call_id => params[:schedule_call_id]))
     end
-    redirect_to schedule_path(@schedule)
+    render :create
   end
 
   private

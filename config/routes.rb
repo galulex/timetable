@@ -15,10 +15,8 @@ Timetable::Application.routes.draw do
     resources :audiences
     resources :groups
     resources :lessons do
-      member do
-        get :copy
-        post :paste
-      end
+      get :copy, :on => :member
+      post :paste, :on => :collection
     end
     resources :schedule_calls
     resources :replacements

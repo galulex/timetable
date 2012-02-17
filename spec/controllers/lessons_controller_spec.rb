@@ -20,7 +20,7 @@ describe LessonsController do
     response.should render_template :new
   end
 
-  describe 'post create'
+  describe 'post create' do
     it 'should create a lesson' do
       post :create, :schedule_id => schedule.id, :format => :js, :lesson => valid_params
       assigns[:lesson].should_not be_nil
@@ -34,6 +34,7 @@ describe LessonsController do
       assigns[:lesson].errors.should_not be_blank
       response.should render_template :create
     end
+  end
 
   it 'should get edit' do
     get :edit, :schedule_id => schedule.id, :id => lesson.id, :format => :js
@@ -59,6 +60,27 @@ describe LessonsController do
     delete :destroy, :schedule_id => schedule.id, :id => lesson.id, :format => :js
     assigns[:lesson].should_not be_nil
     response.should render_template :destroy
+  end
+
+  it 'should copy the lesson' do
+    get :copy, :schedule_id => schedule.id, :id => lesson.id
+    response.should redirect_to(schedule_path(assigns[:schedule]))
+  end
+
+  describe 'post paste' do
+    it 'should create a lesson' do
+      session[:lesson_id] = lesson.id
+      post :paste, :schedule_id => schedule.id, :day_id => lesson.day_id, :schedule_call_id => lesson.schedule_call_id, :group_id => lesson.group_id, :format => :js
+      assigns[:lesson].should_not be_nil
+      assigns[:lesson].errors.should be_blank
+      response.should render_template :create
+    end
+
+    it 'should not create a lesson' do
+      post :paste, :schedule_id => schedule.id, :format => :js
+      assigns[:lesson].should be_nil
+      response.should render_template :create
+    end
   end
 
 end
