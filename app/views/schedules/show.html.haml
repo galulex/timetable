@@ -27,4 +27,4 @@
               - else
                 %td
                   = link_to('+', new_schedule_lesson_path(@schedule, :group_id => group.id, :day_id => i, :schedule_call_id => call.id), :rel => :lazybox, :class => 'add_lesson_link', :id => ['lesson', group.id, i, call.id].join('_'))
-                  = link_to(t(".paste"), paste_schedule_lesson_path(@schedule, :day_id => i, :schedule_call_id => call.id, :group_id => group.id), :method => :post, :remote => true) unless session[:lesson_id].nil?
+                  = link_to(t(".paste"), paste_schedule_lessons_path(@schedule, :day_id => i, :schedule_call_id => call.id, :group_id => group.id), :method => :post, :remote => true) unless session[:lesson_id].nil?
