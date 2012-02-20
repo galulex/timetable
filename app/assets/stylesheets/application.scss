@@ -146,3 +146,14 @@ table {
     width: 300px;
   }
 }
+
+ul.nav {
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+  @include rounded-corners(5px);
+  @include gradient(#888888, #575757);
+  li {
+    display: inline;
+  }
+}
