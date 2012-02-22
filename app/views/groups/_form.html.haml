@@ -1,5 +1,7 @@
 %td{ :colspan => 3 }
   = form_for [@schedule, @object], :remote => true do |f|
-    = f.text_field :name
-    = f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
-    = f.submit t(".ok")
+    %table
+      %tr
+        %td= f.text_field :name
+        %td= f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
+        %td.actions= f.submit t(".ok")

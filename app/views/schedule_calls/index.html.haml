@@ -4,7 +4,7 @@
       %tr
         %th= t(".start_at")
         %th= t(".finish_at")
-        %th= t(".actions")
+        %th.actions= t(".actions")
     %tbody
       = render :partial => 'schedule_call', :collection => @schedule_calls
     %tfoot

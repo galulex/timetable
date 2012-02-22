@@ -105,48 +105,6 @@ span.error {
   display: block;
 }
 
-table {
-  margin: 0 auto;
-  margin-top: 20px;
-  border-collapse: collapse;
-  border-radius: 3px;
-  th {
-    padding: 10px;
-    color: #fff;
-    border: 1px solid #CACACA;
-    background-color: #9DD929;
-    vertical-align: middle;
-    font-weight: bold;
-    color: #555;
-    text-shadow: 0 1px 0 white;
-    border-bottom: 1px solid #D8D8D8;
-    background: linear-gradient(#FAFAFA,#EAEAEA);
-    background: -moz-linear-gradient(#FAFAFA,#EAEAEA);
-    background: -webkit-linear-gradient(#FAFAFA,#EAEAEA);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#eaeaea')";
-    background: linear-gradient(#FAFAFA,#EAEAEA);
-    width: 300px;
-  }
-  td {
-    padding: 5px;
-    background: #F8F8F8;
-    border: 1px solid #CACACA;
-    color: #484848;
-    width: 300px;
-    a.add_lesson_link, a.add_replacement_link {
-      text-decoration: none;
-    }
-    text-align: center;
-  }
-  th:empty, th.new_group, tfoot tr td {
-    background: transparent;
-    border: none;
-  }
-  input, select {
-    width: 300px;
-  }
-}
-
 ul.nav {
   display: inline;
   padding: 5px;

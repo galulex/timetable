@@ -2,7 +2,7 @@
   %td= teacher.first_name
   %td= teacher.last_name
   %td= teacher.hours
-  %td
+  %td.actions
     - unless @schedule.published?
       = link_to t(".edit"), edit_schedule_teacher_path(@schedule, teacher), :remote => true
       = link_to t(".delete"), schedule_teacher_path(@schedule, teacher), :method => :delete, :remote => true

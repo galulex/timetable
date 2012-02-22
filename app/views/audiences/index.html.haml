@@ -3,7 +3,7 @@
     %thead
       %tr
         %th= t(".title")
-        %th= t(".actions")
+        %th.actions= t(".actions")
     %tbody
       = render :partial => 'audience', :collection => @audiences
     %tfoot

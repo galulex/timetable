@@ -5,7 +5,7 @@
         %th= t(".first_name")
         %th= t(".last_name")
         %th= t(".hours")
-        %th= t(".actions")
+        %th.actions= t(".actions")
     %tbody
       = render :partial => 'teacher', :collection => @teachers
     %tfoot
