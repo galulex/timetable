@@ -4,4 +4,4 @@
       %tr
         %td= f.text_field :name
         %td= f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
-        %td.actions= f.submit t(".ok")
+        %td.actions= f.submit t("ok")

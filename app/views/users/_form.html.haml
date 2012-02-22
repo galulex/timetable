@@ -1,21 +1,21 @@
 = form_for @dispatcher, :url => users_path, :remote => true do |f|
-  = f.label :email, t(".email")
+  = f.label :email
   = f.text_field :email
   = error_tag @dispatcher.errors[:email]
-  = f.label :first_name, t(".first_name")
+  = f.label :first_name
   = f.text_field :first_name
   = error_tag @dispatcher.errors[:first_name]
-  = f.label :last_name, t(".last_name")
+  = f.label :last_name
   = f.text_field :last_name
   = error_tag @dispatcher.errors[:last_name]
   = f.fields_for :institution, @dispatcher.institution || @dispatcher.build_institution do |form|
-    = form.label :name, t(".institution")
+    = form.label :name
     = form.text_field :name
     = error_tag @dispatcher.institution.errors[:name]
-  = f.label :password, t(".password")
+  = f.label :password
   = f.password_field :password
   = error_tag @dispatcher.errors[:password]
-  = f.label :password_confirmation, t(".password_confirmation")
+  = f.label :password_confirmation
   = f.password_field :password_confirmation
   %br
-  = f.submit t(".ok")
+  = f.submit t("ok")

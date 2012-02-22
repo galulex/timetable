@@ -20,9 +20,6 @@ en:
       actions: "Actions"
     audience:
       edit: "edit"
-      delete: "x"
-    form:
-      ok: "OK"
   dashboard:
     index:
       sign_in: "Sign In"
@@ -35,22 +32,6 @@ en:
       actions: "Actions"
     group:
       edit: "edit"
-      delete: "x"
-    form:
-      ok: "OK"
-  lessons:
-    form:
-      name: "Name"
-      teacher: "Teacher"
-      audience: "Audience"
-      ok: "OK"
-  replacements:
-    form:
-      name: "Name"
-      teacher: "Teacher"
-      audience: "Audience"
-      date: "Date"
-      ok: "OK"
   schedule_calls:
     index:
       start_at: "Start at"
@@ -58,9 +39,6 @@ en:
       actions: "Actions"
     schedule_call:
       edit: "edit"
-      delete: "x"
-    form:
-      ok: "OK"
   schedules:
     show:
       unpublish: "Unpublish"
@@ -72,10 +50,6 @@ en:
       schedules: "Schedules"
     new:
       new_schedule: "New Schedule"
-    form:
-      title: "Title"
-      lesson_duration: "Lesson Duration"
-      ok: "OK"
     lesson:
       replace: "R"
       copy: "Copy"
@@ -97,22 +71,7 @@ en:
       actions: "Actions"
     teacher:
       edit: "edit"
-      delete: "x"
-    form:
-      ok: "OK"
   users:
-    edit_form:
-      first_name: "First Name"
-      last_name: "Last Name"
-      ok: "OK"
-    form:
-      email: "Email"
-      first_name: "First Name"
-      last_name: "Last Name"
-      institution: "Institution"
-      password: "Password"
-      password_confirmation: "Password Confirmation"
-      ok: "OK"
     new:
       new_dispatcher: "New Dispatcher"
   layouts:
