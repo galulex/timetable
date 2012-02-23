@@ -4,4 +4,5 @@ Factory.define :dispatcher do |d|
   d.last_name { Faker::Name.last_name }
   d.password 'Password2012'
   d.password_confirmation 'Password2012'
+  d.approved true
 end

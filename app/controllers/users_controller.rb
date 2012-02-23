@@ -11,9 +11,9 @@ class UsersController < ApplicationController
 
   def edit
     if current_user
-      @dispatcher = Dispatcher.find(params[:id])
+      @dispatcher = User.find(params[:id])
     else
-      @dispatcher = Dispatcher.find_by_token(params[:id])
+      @dispatcher = User.find_by_token(params[:id])
       unless @dispatcher.nil?
         @dispatcher.update_attribute(:token, nil)
         flash[:notice] = t('.flash.registration_thanks_and_login')

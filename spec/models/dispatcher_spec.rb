@@ -18,13 +18,4 @@ describe Dispatcher do
 
   end
 
-  context 'methods' do
-
-    it 'should not return user' do
-      user = Dispatcher.authenticate(dispatcher.email, 'pass')
-      user.should be_nil
-    end
-
-  end
-
 end

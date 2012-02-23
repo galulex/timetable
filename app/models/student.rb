@@ -1,6 +1,7 @@
 class Student < User
 
   validates :facebook_id, :presence => true, :uniqueness => true
+  attr_accessible :facebook_id
 
   def self.authenticate(info, token)
     attrs = info.reject{|k,v| !self.new.attributes.keys.member?(k.to_s) }

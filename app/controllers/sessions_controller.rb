@@ -13,15 +13,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = Dispatcher.authenticate(params[:email], params[:password])
-    if @user.nil?
-      @message = t('.invalid_credentials')
-    else
+    @user = Dispatcher.find_by_email(params[:email])
+    if @user && @user.authenticate(params[:password])
       if @user.approved?
         session[:user_id] = @user.id
       else
         @message = t('.not_approved_account')
       end
+    else
+      @message = t('.invalid_credentials')
     end
   end
 

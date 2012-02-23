@@ -15,14 +15,16 @@ describe SessionsController do
     it 'should create a session' do
       post :create, :email => dispatcher.email, :password => dispatcher.password, :format => :js
       assigns[:user].should_not be_nil
-      assigns[:user].errors.should be_blank
-      response.should redirect_to schedules_path
+      session[:user_id].should be_eql(dispatcher.id)
+      response.should render_template :create
     end
 
     it 'should not create a session' do
       post :create, :email => dispatcher.email, :password => '', :format => :js
       assigns[:user].should_not be_nil
-      response.should render_template :new
+      assigns[:message].should_not be_blank
+      session[:user_id].should be_nil
+      response.should render_template :create
     end
   end
 
