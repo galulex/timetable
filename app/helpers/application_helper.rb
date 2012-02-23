@@ -20,4 +20,8 @@ module ApplicationHelper
                                           :rel => :lazybox, :class => 'add_lesson_link', :id => lesson.link_id)
   end
 
+  def placeholder_for(object, attr)
+    object.errors[attr].blank? ? t("helpers.label.#{object.class.to_s.underscore}.#{attr}") : @object.errors[attr].first
+  end
+
 end

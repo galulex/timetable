@@ -1,6 +1,4 @@
-# for global stuff such as 'save', 'publish' etc
-
 en:
-  hello: "Hello world"
-  ok: "OK"
-  delete: "x"
+  hello: Hello world
+  ok: OK
+  delete: x

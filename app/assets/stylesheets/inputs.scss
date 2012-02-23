@@ -1,6 +1,8 @@
 div.field_with_errors {
   display: inline;
   input { border: 1px solid red !important; }
+  ::-webkit-input-placeholder { color: red; }
+  :-moz-placeholder { color: red; }
 }
 
 #lazybox {

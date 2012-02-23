@@ -1,83 +1,83 @@
 en:
   admin:
     show:
-      main_admin_page: "Main Admin Page"
-      users: "Users"
+      main_admin_page: Main Admin Page
+      users: Users
     users:
       user:
-        approved: "Approved"
+        approved: Approved
       index:
-        users_page: "Users page"
-        email: "Email"
-        name: "Name"
-        type: "Type"
-        institution: "Institution"
-        approve: "Approve"
-        no_users: "No Users"
+        users_page: Users page
+        email: Email
+        name: Name
+        type: Type
+        institution: Institution
+        approve: Approve
+        no_users: No Users
   audiences:
     index:
-      title: "Title"
-      actions: "Actions"
+      title: Title
+      actions: Actions
     audience:
-      edit: "edit"
+      edit: edit
   dashboard:
     index:
-      sign_in: "Sign In"
-      sign_up: "Sign Up"
-      login_facebook: "Login with facebook"
+      sign_in: Sign In
+      sign_up: Sign Up
+      login_facebook: Login with facebook
   groups:
     index:
-      name: "Name"
-      teacher: "Teacher"
-      actions: "Actions"
+      name: Name
+      teacher: Teacher
+      actions: Actions
     group:
-      edit: "edit"
+      edit: edit
   schedule_calls:
     index:
-      start_at: "Start at"
-      finish_at: "Finish at"
-      actions: "Actions"
+      start_at: Start at
+      finish_at: Finish at
+      actions: Actions
     schedule_call:
-      edit: "edit"
+      edit: edit
   schedules:
     show:
-      unpublish: "Unpublish"
-      publish: "Publish"
-      all: "All"
-      paste: "paste"
+      unpublish: Unpublish
+      publish: Publish
+      all: All
+      paste: paste
     index:
-      create_new_schedule: "Create new schedule"
-      schedules: "Schedules"
+      create_new_schedule: Create new schedule
+      schedules: Schedules
     new:
-      new_schedule: "New Schedule"
+      new_schedule: New Schedule
     lesson:
-      replace: "R"
-      copy: "Copy"
-      edit_replace: "Edit R"
-      edit: "edit"
-      delete: "X"
+      replace: R
+      copy: Copy
+      edit_replace: Edit R
+      edit: edit
+      delete: X
   sessions:
     form:
-      email: "Email"
-      password: "Password"
-      sign_in: "Sign In"
+      email: Email
+      password: Password
+      sign_in: Sign In
     new:
-      sign_in: "Sign In"
+      sign_in: Sign In
   teachers:
     index:
-      first_name: "First Name"
-      last_name: "Last Name"
-      hours: "Hours"
-      actions: "Actions"
+      first_name: First Name
+      last_name: Last Name
+      hours: Hours
+      actions: Actions
     teacher:
-      edit: "edit"
+      edit: edit
   users:
     new:
-      new_dispatcher: "New Dispatcher"
+      new_dispatcher: New Dispatcher
   layouts:
     application:
-      teachers: "Teachers"
-      audiences: "Audiences"
-      groups: "Groups"
-      schedule_calls: "Schedule Calls"
-      sign_out: "Sign Out"
+      teachers: Teachers
+      audiences: Audiences
+      groups: Groups
+      schedule_calls: Schedule Calls
+      sign_out: Sign Out

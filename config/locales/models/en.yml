@@ -1,23 +1,31 @@
 en:
-  hello: "Hello world"
+  hello: Hello world
   helpers:
     label:
-      lesson:
-        name: "Name"
-        teacher_id: "Teacher"
-        audience_id: "Audience"
-      replacement:
-        name: "Name"
-        teacher_id: "Teacher"
-        audience_id: "Audience"
-        date: "Date"
-      schedule:
-        title: "Title"
-        lesson_duration: "Lesson Duration"
+      audience:
+        title: Title
       dispatcher:
-        first_name: "First Name"
-        last_name: "Last Name"
-        email: "Email"
-        institution: "Institution"
-        password: "Password"
-        password_confirmation: "Password Confirmation"
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        institution: Institution
+        password: Password
+        password_confirmation: Password Confirmation
+      group:
+        name: Name
+      lesson:
+        name: Name
+        teacher_id: Teacher
+        audience_id: Audience
+      replacement:
+        name: Name
+        teacher_id: Teacher
+        audience_id: Audience
+        date: Date
+      schedule:
+        title: Title
+        lesson_duration: Lesson Duration
+      teacher:
+        first_name: First Name
+        last_name: Last Name
+        hours: Hours

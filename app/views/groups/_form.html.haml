@@ -2,6 +2,6 @@
   = form_for [@schedule, @object], :remote => true do |f|
     %table
       %tr
-        %td= f.text_field :name
+        %td= f.text_field :name, :placeholder => placeholder_for(@object, :name)
         %td= f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
         %td.actions= f.submit t("ok")
