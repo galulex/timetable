@@ -19,7 +19,7 @@ table {
     td.actions { border-right: none; }
   }
   th {
-    padding: 10px 5px;
+    padding: 5px;
     color: #fff;
     border: 1px solid #CACACA;
     background-color: #9DD929;
@@ -35,6 +35,8 @@ table {
     background: linear-gradient(#FAFAFA,#EAEAEA);
     width: 300px;
   }
+  th.time { width: 105px; }
+  th.day { width: 50px; }
   td {
     padding: 5px;
     background: #F8F8F8;
