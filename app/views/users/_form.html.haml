@@ -1,20 +1,20 @@
-= form_for @dispatcher, :url => users_path, :remote => true do |f|
+= form_for @user, :url => users_path, :remote => true do |f|
   = f.label :email
   = f.text_field :email
-  = error_tag @dispatcher.errors[:email]
+  = error_tag @user.errors[:email]
   = f.label :first_name
   = f.text_field :first_name
-  = error_tag @dispatcher.errors[:first_name]
+  = error_tag @user.errors[:first_name]
   = f.label :last_name
   = f.text_field :last_name
-  = error_tag @dispatcher.errors[:last_name]
-  = f.fields_for :institution, @dispatcher.institution || @dispatcher.build_institution do |form|
+  = error_tag @user.errors[:last_name]
+  = f.fields_for :institution, @user.institution || @user.build_institution do |form|
     = form.label :name
     = form.text_field :name
-    = error_tag @dispatcher.institution.errors[:name]
+    = error_tag @user.institution.errors[:name]
   = f.label :password
   = f.password_field :password
-  = error_tag @dispatcher.errors[:password]
+  = error_tag @user.errors[:password]
   = f.label :password_confirmation
   = f.password_field :password_confirmation
   %br

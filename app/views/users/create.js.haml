@@ -1,4 +1,4 @@
-- if @dispatcher.errors.any?
+- if @user.errors.any?
   $('form#new_dispatcher').html("#{escape_javascript(render :partial => 'form')}");
 -else
   $(document).trigger('close.lazybox');
