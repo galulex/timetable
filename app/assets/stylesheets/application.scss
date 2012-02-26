@@ -59,10 +59,15 @@ body {
 
 .header {
   border-bottom: 3px solid black;
-  padding: 5px 20px;
+  padding: 5px 0;
+  position: fixed;
+  top: 0;
   text-align: right;
+  width: 100%;
   @include gradient(#e2e2e2, #b2b2b2);
 }
+
+.container { margin-top: 50px; }
 
 #lazybox {
   background: url(bg.png) #EDEBDE !important;

@@ -4,4 +4,4 @@
   %td.actions
     - unless @schedule.published?
       = link_to t(".edit"), edit_schedule_group_path(@schedule, group), :remote => true
-      = link_to t("delete"), schedule_group_path(@schedule, group), :method => :delete, :remote => true
+      = link_to t("delete"), schedule_group_path(@schedule, group), :method => :delete, :remote => true, :confirm => t(:are_you_sure)

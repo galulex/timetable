@@ -6,6 +6,7 @@ table {
   border-collapse: collapse;
   border-radius: 3px;
   font-size: 16px;
+  caption { text-align: left; }
   tr.form td { padding: 0; }
   tr.form td td { padding: 2px 5px; }
   table {
@@ -28,7 +29,6 @@ table {
     color: #555;
     text-shadow: 0 1px 0 white;
     border-bottom: 1px solid #D8D8D8;
-    background: linear-gradient(#FAFAFA,#EAEAEA);
     background: -moz-linear-gradient(#FAFAFA,#EAEAEA);
     background: -webkit-linear-gradient(#FAFAFA,#EAEAEA);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#eaeaea')";

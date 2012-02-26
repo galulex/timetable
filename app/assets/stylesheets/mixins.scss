@@ -6,11 +6,11 @@
 
 @mixin gradient($col1, $col2) {
   background: $col1;
-	background: -webkit-gradient(linear, left top, left bottom, from($col1), to($col2));
-  background: -moz-linear-gradient(top, $col1, $col2);
+	background: -webkit-linear-gradient($col1, $col2);
+  background: -moz-linear-gradient($col1, $col2);
   background: -ms-linear-gradient($col1, $col2);
   background: linear-gradient($col1, $col2);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr=$col1, endColorstr=$col2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$col1, endColorstr=$col2);
 }
 
 @mixin shadow($val) {
