@@ -1,0 +1,22 @@
+- if @schedule.groups.any?
+  %table{ :width => @table_width }
+    %caption
+      %h1= @schedule.title
+    %thead
+      %tr
+        %th{ :colspan => 2 }
+        - @schedule.groups.each do |group|
+          %th{:id => "group_#{group.id}"}= group.name
+    %tbody
+      - @days.each_pair do |i, day|
+        %tr
+          %th.day{ :rowspan => @schedule.schedule_calls.size + 1 }= day
+        - @schedule.schedule_calls.each do |call|
+          %tr
+            %th.time= call.time
+            - @schedule.groups.each do |group|
+              - if lesson = @lessons.find_by_group_id_and_day_id_and_schedule_call_id(group.id, i, call.id)
+                %td{:id => "lesson_#{lesson.id}"}
+                  = render :partial => 'lesson', :object => lesson, :print => true
+              - else
+                %td

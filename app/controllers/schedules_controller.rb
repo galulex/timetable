@@ -17,6 +17,15 @@ class SchedulesController < ApplicationController
     @lessons = @schedule.lessons.for_day(params[:day_id])
     @days = @schedule.days
     @days = { params[:day_id] => @days[params[:day_id].to_i] } if params[:day_id]
+    @table_width = (@schedule.groups.size * 250) + 105 + 60 + 20
+  end
+
+  def print
+    @schedule = current_user.schedules.find(params[:id])
+    @lessons = @schedule.lessons.for_day(params[:day_id])
+    @days = @schedule.days
+    @table_width = (@schedule.groups.size * 250) + 105 + 60
+    render :layout => 'print'
   end
 
   def update

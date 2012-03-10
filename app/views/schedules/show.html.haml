@@ -4,7 +4,7 @@
     = link_to day, schedule_path(@schedule, :day_id => i)
 
 - if @schedule.groups.any?
-  %table
+  %table{ :width => @table_width }
     %caption
       %h1= @schedule.title
     %thead
@@ -12,7 +12,8 @@
         %th{ :colspan => 2 }= link_to schedule_action, schedule_path(@schedule), :method => :put, :class => @schedule.published? ? 'red button' : 'green button'
         - @schedule.groups.each do |group|
           %th{:id => "group_#{group.id}"}= group.name
-        %th.new_group= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
+        %th.new_group
+          %h1= link_to '+', new_schedule_group_path(@schedule), :rel => :lazybox
     %tbody
       - @days.each_pair do |i, day|
         %tr

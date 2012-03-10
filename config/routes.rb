@@ -11,6 +11,7 @@ Timetable::Application.routes.draw do
   resource :session, :except => [:edit]
 
   resources :schedules do
+    get :print, :on => :member
     resources :teachers
     resources :audiences
     resources :groups
