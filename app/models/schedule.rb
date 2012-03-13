@@ -12,6 +12,7 @@ class Schedule < ActiveRecord::Base
   has_many :replacements, :dependent => :delete_all
   has_many :schedule_calls, :dependent => :delete_all
   belongs_to :dispatcher
+  belongs_to :institution
 
 
   def days

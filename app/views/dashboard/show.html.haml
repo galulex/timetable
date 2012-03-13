@@ -1,9 +1,4 @@
-.menu
-  = link_to t(".all"), schedule_path(@schedule)
-  - @schedule.days.each_pair do |i, day|
-    = link_to day, schedule_path(@schedule, :day_id => i)
-
-- if @schedule.groups.any?
+- if @schedule && @schedule.groups.any?
   %table{ :width => @table_width }
     %caption
       %h1= @schedule.title

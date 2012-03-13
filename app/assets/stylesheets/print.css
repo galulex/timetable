@@ -2,72 +2,26 @@ table {
   margin: 0 auto;
   margin-top: 20px;
   border-collapse: collapse;
-  border-radius: 3px;
   font-size: 16px;
-  caption { text-align: left; }
-  tr.form td { padding: 0; }
-  tr.form td td { padding: 2px 5px; }
-  table {
-    margin: 0;
-    td {
-      border: none;
-      border-right: 1px solid #CACACA;
-      width: 300px;
-      padding: 0 5px;
-    }
-    td.actions { border-right: none; }
-  }
-  th {
-    padding: 5px;
-    color: #fff;
-    border: 1px solid #CACACA;
-    background-color: #FAFAFA;
-    vertical-align: middle;
-    font-weight: bold;
-    color: #555;
-    text-shadow: 0 1px 0 white;
-    border-bottom: 1px solid #D8D8D8;
-    background: -moz-linear-gradient(#FAFAFA,#EAEAEA);
-    background: -webkit-linear-gradient(#FAFAFA,#EAEAEA);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#eaeaea')";
-    background: linear-gradient(#FAFAFA,#EAEAEA);
-    width: 250px;
-  }
-  th.time { width: 105px; }
-  th.day { width: 50px; }
-  td {
-    padding: 5px;
-    background: #F8F8F8;
-    border: 1px solid #CACACA;
-    color: #484848;
-    width: 250px;
-    text-align: left;
-  }
-  td.actions, th.actions {
-    width: 50px;
-  }
-  th:empty, th.new_group, tfoot tr td {
-    background: transparent;
-    border: none;
-  }
-  th.new_group {
-    text-align: left;
-    width: 20px;
-  }
-  input[type=text], select {
-    font-size: 14px;
-    width: 100%;
-    border: 1px solid #CACACA;
-    padding: 2px 0;
-    margin: 0;
-  }
-  select { padding: 1px 0; }
-  input[type=submit] {
-    width: 100%;
-    padding: 1px 0;
-    margin: 0;
-  }
-  td.start_at select {
-    width: 50px;
-  }
+}
+th {
+  padding: 5px;
+  color: #fff;
+  border: 1px solid #CACACA;
+  background-color: #FAFAFA;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #555;
+  border-bottom: 1px solid #D8D8D8;
+  width: 250px;
+}
+th.time { width: 105px; }
+th.day { width: 50px; }
+td {
+  padding: 5px;
+  background: white;
+  border: 1px solid #CACACA;
+  color: #484848;
+  width: 250px;
+  text-align: left;
 }

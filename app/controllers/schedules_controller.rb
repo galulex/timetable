@@ -9,7 +9,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = current_user.schedules.create(params[:schedule])
+    @schedule = current_user.schedules.create(params[:schedule].merge({ :institution_id => current_user.institution.id }))
   end
 
   def show
