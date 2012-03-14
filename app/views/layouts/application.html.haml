@@ -7,14 +7,16 @@
     = csrf_meta_tags
   %body
     .header
-      - if can_manage_schedules? && !@schedule.nil?
+      - if can_manage_schedules? && !@schedule.nil? && !can_view_schedule?
         %ul.nav
           %li= link_to t(".teachers"), schedule_teachers_path(@schedule)
           %li= link_to t(".audiences"), schedule_audiences_path(@schedule)
           %li= link_to t(".groups"), schedule_groups_path(@schedule)
           %li= link_to t(".schedule_calls"), schedule_schedule_calls_path(@schedule)
       - if can_view_schedule?
-        adsasdsad
+        = form_tag view_schedule_path, :method => :get do
+          = select_tag :institution, options_from_collection_for_select(Institution.all, :id, :name), :include_blank => true
+          = submit_tag :OK
       - if current_user
         = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox, :class => 'orange button'
         = link_to t(".sign_out"), session_path, :method => :delete, :class => 'orange button'

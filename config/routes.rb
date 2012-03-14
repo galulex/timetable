@@ -23,7 +23,7 @@ Timetable::Application.routes.draw do
     resources :replacements
   end
 
-  get 'schedule' => 'dashboard#show'
+  get 'schedule' => 'dashboard#show', :as => :view_schedule
   root :to => 'dashboard#index'
 
 end

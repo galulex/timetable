@@ -6,6 +6,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.string  :title
       t.boolean :published, :default => false
       t.time    :lesson_duration
+      t.integer :working_days
 
       t.timestamps
     end

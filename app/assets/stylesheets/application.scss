@@ -67,7 +67,7 @@ body {
   @include gradient(#e2e2e2, #b2b2b2);
 }
 
-.container { margin-top: 50px; }
+.container { margin-top: 45px; }
 
 #lazybox {
   background: url(bg.png) #EDEBDE !important;
@@ -118,5 +118,23 @@ ul.nav {
   @include gradient(#888888, #575757);
   li {
     display: inline;
+  }
+}
+
+ul.menu {
+  border-bottom: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+  display: inline;
+  padding: 5px;
+  @include gradient(#FAFAFA, #EAEAEA);
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+  li {
+    padding: 5px;
+    display: inline;
+  }
+  li.item {
+    border-left: 1px solid #D8D8D8;
   }
 }
