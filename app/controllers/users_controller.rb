@@ -6,8 +6,10 @@ class UsersController < ApplicationController
 
   def create
     @user = Dispatcher.new(params[:dispatcher])
-    flash[:notice] = t('.flash.registration_thanks_and_invite') if @user.save
-    UserMailer.invite(@user).deliver
+    if @user.save
+      flash[:notice] = t('.flash.registration_thanks_and_invite')
+      UserMailer.invite(@user).deliver
+    end
   end
 
   def edit

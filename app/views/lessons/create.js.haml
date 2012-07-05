@@ -2,4 +2,4 @@
   $('#lazybox_body form').html("#{escape_javascript(render :partial => 'form')}");
 - else
   $("a##{@lesson.link_id}").parent().html("#{escape_javascript(render :partial => '/schedules/lesson', :object => @lesson)}").attr('id', "lesson_#{@lesson.id}");
-  $(document).trigger('close.lazybox');
+  $.lazybox.close();
