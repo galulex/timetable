@@ -23,7 +23,7 @@
           %tr
             %th.time= call.time
             - @schedule.groups.each do |group|
-              - if lesson = @lessons.find_by_group_id_and_day_id_and_schedule_call_id(group.id, i, call.id)
+              - if lesson = @lessons.select{ |l| l if l.group_id == group.id && l.day_id == i && l.schedule_call_id == call.id}.first
                 %td{:id => "lesson_#{lesson.id}"}
                   = render :partial => 'lesson', :object => lesson
               - else

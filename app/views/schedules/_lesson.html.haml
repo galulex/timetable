@@ -3,8 +3,8 @@
 %p= lesson.audience.title unless lesson.audience.nil?
 = link_to t(".copy"), copy_schedule_lesson_path(@schedule, lesson)
 - if @schedule.published
-  - unless lesson.replacements.blank?
-    - lesson.replacements.each do |r|
+  - unless replacements = @replacements.select{ |r| r if r.lesson_id == lesson.id }
+    - replacements.each do |r|
       = link_to r.name, edit_schedule_replacement_path(@schedule, r), :rel => :lazybox
   = link_to(t(".replace"), new_schedule_replacement_path(@schedule, :group_id => lesson.group_id, :day_id => lesson.day_id, :schedule_call_id => lesson.schedule_call_id, :lesson_id => lesson.id), :rel => :lazybox, :class => 'add_replacement_link')
 - else
