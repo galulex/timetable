@@ -3,5 +3,5 @@
     %table
       %tr
         %td.start_at= f.time_select :start_at, :minute_step => 5, :class => :time_select
-        %td.finish_at
+        %td.finish_at= f.time_select :finish_at, :minute_step => 5, :class => :time_select
         %td.actions= f.submit t("ok")
