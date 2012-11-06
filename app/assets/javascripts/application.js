@@ -7,8 +7,12 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require turbolinks
+//= require jquery.turbolinks
 //= require lazybox
 //= require_tree .
+
+$.setReadyEvent('page:change');
 
 $(document).ready(function() {
   $('a[rel*=lazybox]').lazybox();

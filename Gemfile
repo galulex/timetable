@@ -8,6 +8,8 @@ gem 'haml'
 gem 'lazybox'
 gem 'facebook_oauth'
 gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Gems used only for assets and not required
 # in production environments by default.
