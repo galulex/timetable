@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SessionsController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
 
   it 'should get new' do
     get :new, :format => :js

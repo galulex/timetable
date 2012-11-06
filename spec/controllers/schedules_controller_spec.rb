@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe SchedulesController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
-  let(:schedule) { Factory.create(:schedule, :dispatcher => dispatcher) }
-  let(:valid_params) { Factory.build(:schedule).attributes }
-  let(:invalid_params) { Factory.build(:schedule, :title => '').attributes }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
+  let(:schedule) { FactoryGirl.create(:schedule, :dispatcher => dispatcher) }
+  let(:valid_params) { FactoryGirl.build(:schedule).attributes }
+  let(:invalid_params) { FactoryGirl.build(:schedule, :title => '').attributes }
 
   before(:each) do
     controller.stub(:current_user).and_return(dispatcher)
@@ -61,7 +61,7 @@ describe SchedulesController do
   it 'should destroy the schedule' do
     delete :destroy, :schedule_id => schedule.id, :id => schedule.id
     assigns[:schedule].should_not be_nil
-    response.should redirect_to schedules_path 
+    response.should redirect_to schedules_path
   end
 
 end

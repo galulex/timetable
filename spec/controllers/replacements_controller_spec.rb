@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe ReplacementsController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
-  let(:schedule) { Factory.create(:schedule, :dispatcher => dispatcher) }
-  let(:replacement) { Factory.create(:replacement, :schedule => schedule) }
-  let(:valid_params) { Factory.build(:replacement).attributes }
-  let(:invalid_params) { Factory.build(:replacement, :name => '').attributes }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
+  let(:schedule) { FactoryGirl.create(:schedule, :dispatcher => dispatcher) }
+  let(:replacement) { FactoryGirl.create(:replacement, :schedule => schedule) }
+  let(:valid_params) { FactoryGirl.build(:replacement).attributes }
+  let(:invalid_params) { FactoryGirl.build(:replacement, :name => '').attributes }
 
   before(:each) do
     controller.stub(:current_user).and_return(dispatcher)

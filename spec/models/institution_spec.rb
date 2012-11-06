@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Institution do
 
-  let(:institution) { Factory.build(:institution) }
+  let(:institution) { FactoryGirl.build(:institution) }
 
   context 'validations' do
 

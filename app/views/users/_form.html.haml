@@ -9,7 +9,7 @@
   = f.text_field :last_name
   = error_tag @user.errors[:last_name]
   = f.fields_for :institution, @user.institution || @user.build_institution do |form|
-    = form.label :name
+    = form.label :institution
     = form.text_field :name
     = error_tag @user.institution.errors[:name]
   = f.label :password

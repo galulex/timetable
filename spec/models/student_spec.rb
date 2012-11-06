@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Student do
 
-  let(:student) { Factory.build(:student) }
+  let(:student) { FactoryGirl.build(:student) }
 
   context 'validations' do
 

@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe ScheduleCallsController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
-  let(:schedule) { Factory.create(:schedule, :dispatcher => dispatcher) }
-  let(:schedule_call) { Factory.create(:schedule_call, :schedule => schedule) }
-  let(:valid_params) { Factory.build(:schedule_call).attributes }
-  let(:invalid_params) { Factory.build(:schedule_call, :start_at => '').attributes }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
+  let(:schedule) { FactoryGirl.create(:schedule, :dispatcher => dispatcher) }
+  let(:schedule_call) { FactoryGirl.create(:schedule_call, :schedule => schedule) }
+  let(:valid_params) { FactoryGirl.build(:schedule_call).attributes }
+  let(:invalid_params) { FactoryGirl.build(:schedule_call, :start_at => '').attributes }
 
   before(:each) do
     controller.stub(:current_user).and_return(dispatcher)

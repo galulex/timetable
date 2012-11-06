@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Replacement do
 
-  let(:replacement) { Factory.build(:replacement) }
+  let(:replacement) { FactoryGirl.build(:replacement) }
 
   context 'validations' do
 

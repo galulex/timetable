@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Admin::UsersController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
 
   before do
     @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:admin")

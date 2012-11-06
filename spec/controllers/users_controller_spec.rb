@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe UsersController do
 
-  let(:user_params) { Factory.build(:dispatcher).attributes.merge(:password => 'PassWord2012', :password_confiramtion => 'PassWord2012') }
-  let(:user) { Factory.create(:dispatcher) }
+  let(:user_params) { FactoryGirl.build(:dispatcher).attributes.merge(:password => 'PassWord2012', :password_confiramtion => 'PassWord2012') }
+  let(:user) { FactoryGirl.create(:dispatcher) }
 
 
   it 'should get new' do

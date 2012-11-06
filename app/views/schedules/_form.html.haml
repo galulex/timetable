@@ -1,8 +1,6 @@
 = form_for @schedule, :remote => true do |f|
   = f.label :title
   = f.text_field :title
-  = f.label :lesson_duration
-  = f.number_field :lesson_duration
   = error_tag @schedule.errors[:title]
   %br
   = f.submit t("ok")

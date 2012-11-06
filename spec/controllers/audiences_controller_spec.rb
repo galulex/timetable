@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe AudiencesController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
-  let(:schedule) { Factory.create(:schedule, :dispatcher => dispatcher) }
-  let(:audience) { Factory.create(:audience, :schedule => schedule) }
-  let(:valid_params) { Factory.build(:audience).attributes }
-  let(:invalid_params) { Factory.build(:audience, :title => '').attributes }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
+  let(:schedule) { FactoryGirl.create(:schedule, :dispatcher => dispatcher) }
+  let(:audience) { FactoryGirl.create(:audience, :schedule => schedule) }
+  let(:valid_params) { FactoryGirl.build(:audience).attributes }
+  let(:invalid_params) { FactoryGirl.build(:audience, :title => '').attributes }
 
   before(:each) do
     controller.stub(:current_user).and_return(dispatcher)

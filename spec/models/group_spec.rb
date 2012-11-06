@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Group do
 
-  let(:group) { Factory.build(:group) }
+  let(:group) { FactoryGirl.build(:group) }
 
   context 'validations' do
 

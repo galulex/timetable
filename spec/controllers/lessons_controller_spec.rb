@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe LessonsController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
-  let(:schedule) { Factory.create(:schedule, :dispatcher => dispatcher) }
-  let(:lesson) { Factory.create(:lesson, :schedule => schedule) }
-  let(:valid_params) { Factory.build(:lesson).attributes }
-  let(:invalid_params) { Factory.build(:lesson, :name => '').attributes }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
+  let(:schedule) { FactoryGirl.create(:schedule, :dispatcher => dispatcher) }
+  let(:lesson) { FactoryGirl.create(:lesson, :schedule => schedule) }
+  let(:valid_params) { FactoryGirl.build(:lesson).attributes }
+  let(:invalid_params) { FactoryGirl.build(:lesson, :name => '').attributes }
 
   before(:each) do
     controller.stub(:current_user).and_return(dispatcher)

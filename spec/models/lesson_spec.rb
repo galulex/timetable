@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Lesson do
 
-  let(:lesson) { Factory.build(:lesson) }
+  let(:lesson) { FactoryGirl.build(:lesson) }
 
   context 'validations' do
 

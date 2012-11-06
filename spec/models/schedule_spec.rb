@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Schedule do
 
-  let(:schedule) { Factory.build(:schedule) }
+  let(:schedule) { FactoryGirl.build(:schedule) }
 
   context 'validations' do
 

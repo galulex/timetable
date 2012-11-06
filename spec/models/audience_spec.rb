@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Audience do
 
-  let(:audience) { Factory.build(:audience) }
+  let(:audience) { FactoryGirl.build(:audience) }
 
   context 'validations' do
 

@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe GroupsController do
 
-  let(:dispatcher) { Factory.create(:dispatcher) }
-  let(:schedule) { Factory.create(:schedule, :dispatcher => dispatcher) }
-  let(:group) { Factory.create(:group, :schedule => schedule) }
-  let(:valid_params) { Factory.build(:group).attributes }
-  let(:invalid_params) { Factory.build(:group, :name => '').attributes }
+  let(:dispatcher) { FactoryGirl.create(:dispatcher) }
+  let(:schedule) { FactoryGirl.create(:schedule, :dispatcher => dispatcher) }
+  let(:group) { FactoryGirl.create(:group, :schedule => schedule) }
+  let(:valid_params) { FactoryGirl.build(:group).attributes }
+  let(:invalid_params) { FactoryGirl.build(:group, :name => '').attributes }
 
   before(:each) do
     controller.stub(:current_user).and_return(dispatcher)

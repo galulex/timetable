@@ -1,55 +1,72 @@
-Factory.define :audience  do |a|
-  a.title rand(120)
-  a.association :schedule
+FactoryGirl.define do
+  factory :audience do
+    title { rand(120) }
+    association :schedule
+  end
 end
 
-Factory.define :institution  do |a|
-  a.name { Faker::Name.first_name }
-  a.association :dispatcher
+FactoryGirl.define  do
+  factory :institution do
+    name  Faker::Name.first_name
+    association :dispatcher
+  end
 end
 
-Factory.define :teacher  do |t|
-  t.first_name { Faker::Name.first_name }
-  t.last_name { Faker::Name.last_name }
-  t.hours rand(100)
-  t.association :schedule
+FactoryGirl.define  do
+  factory :teacher do
+    first_name Faker::Name.first_name
+    last_name Faker::Name.last_name
+    hours { rand(100) }
+    association :schedule
+  end
 end
 
-Factory.define :group  do |g|
-  g.name { Faker::Name.name }
-  g.association :teacher
-  g.association :schedule
+FactoryGirl.define  do
+  factory :group do
+    name Faker::Name.name
+    association :teacher
+    association :schedule
+  end
 end
 
-Factory.define :lesson do |l|
-  l.name { Faker::Name.name }
-  l.day_id rand(6)
-  l.association :group
-  l.association :schedule
-  l.association :schedule_call
-  l.association :teacher
-  l.association :audience
+FactoryGirl.define do
+  factory :lesson do
+
+    name  Faker::Name.name
+    day_id  { rand(6) }
+    association :group
+    association :schedule
+    association :schedule_call
+    association :teacher
+    association :audience
+  end
 end
 
-Factory.define :replacement do |r|
-  r.name { Faker::Name.name }
-  r.day_id rand(6)
-  r.date Time.now
-  r.association :group
-  r.association :lesson
-  r.association :schedule
-  r.association :schedule_call
-  r.association :teacher
-  r.association :audience
+FactoryGirl.define do
+  factory:replacement do
+
+    name  Faker::Name.name
+    day_id { rand(6) }
+    date Time.now
+    association :group
+    association :lesson
+    association :schedule
+    association :schedule_call
+    association :teacher
+    association :audience
+  end
 end
 
-Factory.define :schedule_call do |s|
-  s.start_at Time.now
-  s.association :schedule
+FactoryGirl.define do
+  factory  :schedule_call do
+    start_at Time.now
+    association :schedule
+  end
 end
 
-Factory.define :schedule do |s|
-  s.title { Faker::Name.name }
-  s.lesson_duration rand(120)
-  s.published false
+FactoryGirl.define do
+  factory :schedule do
+    title  Faker::Name.name
+    published false
+  end
 end

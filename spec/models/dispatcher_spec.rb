@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Dispatcher do
 
-  let(:dispatcher) { Factory.build(:dispatcher) }
+  let(:dispatcher) { FactoryGirl.build(:dispatcher) }
 
   context 'validations' do
 
