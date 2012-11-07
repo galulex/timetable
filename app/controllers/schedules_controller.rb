@@ -9,7 +9,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = current_user.schedules.create(params[:schedule].merge({ :institution_id => current_user.institution.id }))
+    @schedule = current_user.schedules.create(params[:schedule].merge({ :institution_id => current_user.id }))
   end
 
   def show
@@ -33,6 +33,11 @@ class SchedulesController < ApplicationController
     @schedule = current_user.schedules.find(params[:id])
     @schedule.update_attribute(:published, !@schedule.published?) unless params[:schedule]
     redirect_to schedule_path(@schedule)
+  end
+
+  def destroy
+    @schedule = current_user.schedules.find(params[:id])
+    @schedule.destroy
   end
 
 end

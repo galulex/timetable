@@ -20,14 +20,13 @@ describe ScheduleCall do
 
   context 'methods' do
 
-    it 'should return finish_at' do
-      schedule_call.finish_at.should eq(schedule_call.start_at + schedule_call.schedule.lesson_duration.to_i)
-    end
-
     it 'should return time' do
       schedule_call.time.should_not be_nil
     end
 
+    it ' finish_at_more_start_at' do
+      schedule_call.finish_at.should
+    end
   end
 
 end
