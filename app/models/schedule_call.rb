@@ -21,6 +21,6 @@ class ScheduleCall < ActiveRecord::Base
 
   def finish_at_more_limit_minutes
     errors.add(:finish_at, "can't be finish at less 45 minutes") if
-    start_at - finish_at - 45
+    finish_at < start_at + 45.minutes
   end
 end
