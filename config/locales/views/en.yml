@@ -48,6 +48,8 @@ en:
     index:
       create_new_schedule: Create new schedule
       schedules: Schedules
+      delete: X
+      are_you_sure: Are you sure
     new:
       new_schedule: New Schedule
     lesson:

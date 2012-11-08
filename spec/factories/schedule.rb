@@ -60,6 +60,7 @@ end
 FactoryGirl.define do
   factory  :schedule_call do
     start_at Time.now
+    finish_at { Time.now + 55.minutes }
     association :schedule
   end
 end
