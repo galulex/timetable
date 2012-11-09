@@ -5,5 +5,7 @@ class Institution < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
 
   belongs_to :dispatcher
+  has_many :schedules
+  has_many :groups, through: :schedules
 
 end

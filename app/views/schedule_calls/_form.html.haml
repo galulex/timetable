@@ -6,4 +6,6 @@
         %td.finish_at
           = f.time_select :finish_at, :minute_step => 5, :class => :time_select
           = error_tag(@object.errors[:finish_at])
-        %td.actions= f.submit t("ok")
+        %td.actions
+          = f.submit t("ok")
+          = link_to t("cancel"), ""

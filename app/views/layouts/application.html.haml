@@ -15,8 +15,9 @@
           %li= link_to t(".schedule_calls"), schedule_schedule_calls_path(@schedule)
       - if can_view_schedule?
         = form_tag view_schedule_path, :method => :get do
-          = select_tag :institution, options_from_collection_for_select(Institution.all, :id, :name), :include_blank => true
-          = submit_tag :OK
+          = collection_select :schedule, :institution_id, Institution.order(:name), :id, :name, include_blank: true
+          = grouped_collection_select :group, :id, Institution.find(:all), :groups, :name, :id, :name, include_blank: true
+          = submit_tag :OK, :class => 'actions'
       - if current_user
         = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox, :class => 'orange button'
         = link_to t(".sign_out"), session_path, :method => :delete, :class => 'orange button'

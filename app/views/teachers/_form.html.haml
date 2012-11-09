@@ -5,4 +5,6 @@
         %td= f.text_field :first_name, :placeholder => placeholder_for(@object, :first_name)
         %td= f.text_field :last_name, :placeholder => placeholder_for(@object, :last_name)
         %td= f.text_field :hours, :placeholder => placeholder_for(@object, :hours)
-        %td.actions= f.submit t("ok")
+        %td.actions
+          = f.submit t("ok")
+          = link_to t("cancel"), ""

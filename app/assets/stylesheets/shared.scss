@@ -43,7 +43,7 @@ table {
     text-align: left;
   }
   td.actions, th.actions {
-    width: 50px;
+    width: 180px;
   }
   th:empty, th.new_group, tfoot tr td {
     background: transparent;
@@ -62,7 +62,7 @@ table {
   }
   select { padding: 1px 0; }
   input[type=submit] {
-    width: 100%;
+    width: 70px;
     padding: 1px 0;
     margin: 0;
   }

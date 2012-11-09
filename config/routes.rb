@@ -6,6 +6,7 @@ Timetable::Application.routes.draw do
     resources :users, :only => [:index, :update]
   end
 
+  resources :javascripts
   resources :users
 
   resource :session, :except => [:edit]
