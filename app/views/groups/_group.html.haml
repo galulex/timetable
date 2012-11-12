@@ -1,5 +1,6 @@
 %tr{:id => "group_#{group.id}"}
   %td= group.name
+  %td= group.faculty.title unless group.faculty.nil?
   %td= group.teacher.name unless group.teacher.nil?
   %td.actions
     - unless @schedule.published?

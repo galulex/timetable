@@ -20,6 +20,12 @@ en:
       actions: Actions
     audience:
       edit: edit
+  faculties:
+    index:
+      title: Title
+      actions: Actions
+    faculty:
+      edit: edit
   dashboard:
     index:
       sign_in: Sign In

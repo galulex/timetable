@@ -1,5 +1,7 @@
 Timetable::Application.routes.draw do
 
+  get "faculties/index"
+
   resource :admin, :controller => :admin, :only => :show
 
   namespace :admin do
@@ -15,6 +17,7 @@ Timetable::Application.routes.draw do
     get :print, :on => :member
     resources :teachers
     resources :audiences
+    resources :faculties
     resources :groups
     resources :lessons do
       get :copy, :on => :member

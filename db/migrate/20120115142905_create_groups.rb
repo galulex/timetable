@@ -3,6 +3,7 @@ class CreateGroups < ActiveRecord::Migration
     create_table :groups do |t|
       t.integer :schedule_id
       t.integer :teacher_id
+      t.integer :faculty_id
       t.string :name
 
       t.timestamps
