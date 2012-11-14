@@ -4,7 +4,11 @@
       %h1= @schedule.title
     %thead
       %tr
-        %th{ :colspan => 2 }
+        %th{ :colspan => 2, :rowspan => 2 }
+          %h3
+        - @schedule.groups.each do |group|
+          %th{:id => "group_#{group.id}"}= group.faculty.title
+      %tr
         - @schedule.groups.each do |group|
           %th{:id => "group_#{group.id}"}= group.name
     %tbody

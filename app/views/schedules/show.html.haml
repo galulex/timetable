@@ -10,11 +10,15 @@
       %h1= @schedule.title
     %thead
       %tr
-        %th{ :colspan => 2 }
+        %th{ :colspan => 2, :rowspan => 2 }
           = link_to schedule_action, schedule_path(@schedule), :method => :put, :class => @schedule.published? ? 'red button' : 'green button'
           = link_to 'Print', print_schedule_path(@schedule), :class => 'gray button'
         - @schedule.groups.each do |group|
+          %th{:id => "group_#{group.id}"}= group.faculty.title
+      %tr
+        - @schedule.groups.each do |group|
           %th{:id => "group_#{group.id}"}= group.name
+
     %tbody
       - @days.each_pair do |i, day|
         %tr

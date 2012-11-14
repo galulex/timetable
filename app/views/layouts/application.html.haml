@@ -8,15 +8,17 @@
     .header
       - if can_manage_schedules? && !@schedule.nil? && !can_view_schedule?
         %ul.nav
+          %li= link_to t(".schedules"), schedule_path(@schedule)
+          %li= link_to t(".dashboard"), view_schedule_path(@schedule)
           %li= link_to t(".teachers"), schedule_teachers_path(@schedule)
           %li= link_to t(".audiences"), schedule_audiences_path(@schedule)
-          %li= link_to t(".groups"), schedule_groups_path(@schedule)
           %li= link_to t(".faculties"), schedule_faculties_path(@schedule)
+          %li= link_to t(".groups"), schedule_groups_path(@schedule)
           %li= link_to t(".schedule_calls"), schedule_schedule_calls_path(@schedule)
       - if can_view_schedule?
         = form_tag view_schedule_path, :method => :get do
           = collection_select :search, :institution_id, Institution.order(:name), :id, :name, include_blank: true
-          = grouped_collection_select :search, :group_id, Institution.find(:all), :groups, :name, :id, :name, selected_key: 2, include_blank: true
+          = grouped_collection_select :search, :group_id, Institution.find(:all), :groups, :name, :id, :name, include_blank: true
           = submit_tag :OK, :class => 'actions'
       - if current_user
         = link_to current_user.name, edit_user_path(current_user), :rel => :lazybox, :class => 'orange button'

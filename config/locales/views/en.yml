@@ -84,8 +84,11 @@ en:
       new_dispatcher: New Dispatcher
   layouts:
     application:
+      dashboard: Dashboard
+      schedules: Schedules
       teachers: Teachers
       audiences: Audiences
+      faculties: Faculties
       groups: Groups
       schedule_calls: Schedule Calls
       sign_out: Sign Out
