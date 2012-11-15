@@ -1,0 +1,7 @@
+%tr{:id => "faculty_#{faculty.id}"}
+  %td= faculty.title
+  %td.actions
+    - unless @schedule.published?
+      = link_to(t(".edit"), edit_schedule_faculty_path(@schedule, faculty), :remote => true)
+      = link_to(t(".delete"), schedule_faculty_path(@schedule, faculty), :method => :delete, :remote => true, :confirm => t(:are_you_sure))
+

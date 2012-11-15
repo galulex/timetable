@@ -1,0 +1,12 @@
+- unless @faculties.nil?
+  %table#faculties
+    %thead
+      %tr
+        %th= t(".title")
+        %th.actions= t(".actions")
+    %tbody
+      = render :partial => 'faculty', :collection => @faculties
+    %tfoot
+      %tr
+        %td= link_to '+', new_schedule_faculty_path, :id => :add_faculty, :remote => true
+
