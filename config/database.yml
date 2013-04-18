@@ -2,16 +2,16 @@ development:
   adapter: mysql2
   database: timetable_dev
   username: root
-  password: password
+  password:
 
 test:
   adapter: mysql2
   database: timetable_test
   username: root
-  password: password
+  password:
 
 production:
   adapter: mysql2
   database: timetable
   username: root
-  password: password
+  password:

@@ -1,8 +1,8 @@
 %div
-  %ul.menu
-    %li= link_to t(".all"), schedule_path(@schedule)
+  %ul.button-group
+    %li= link_to t(".all"), schedule_path(@schedule), class: :button
     - @schedule.days.each_pair do |i, day|
-      %li.item= link_to day, schedule_path(@schedule, :day_id => i)
+      %li.item= link_to day, schedule_path(@schedule, :day_id => i), class: :button
 
 - if @schedule.groups.any?
   %table{ :width => @table_width }
