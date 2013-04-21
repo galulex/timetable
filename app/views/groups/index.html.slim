@@ -1,0 +1,12 @@
+- unless @groups.nil?
+  table#groups
+    thead
+      tr
+        th= t(".name")
+        th= t(".teacher")
+        th.actions= t(".actions")
+    tbody
+      = render :partial => 'group', :collection => @groups
+    tfoot
+      tr
+        td= link_to '+', new_schedule_group_path, :id => :add_group, :remote => true

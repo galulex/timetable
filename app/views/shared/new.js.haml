@@ -1,2 +1,0 @@
-$("#add_#{@object.class.to_s.underscore}").hide();
-$('##{@object.class.to_s.underscore.pluralize} tbody').append("<tr class='form'>#{escape_javascript(render :partial => 'form')}</tr>");

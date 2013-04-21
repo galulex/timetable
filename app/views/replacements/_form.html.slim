@@ -1,0 +1,19 @@
+= form_for [@schedule, @replacement], :remote => true do |f|
+  = f.label :name
+  = f.text_field :name
+  = error_tag @replacement.errors[:name]
+  = f.label :teacher_id
+  = f.select :teacher_id, @schedule.teachers.map{ |t| [t.name, t.id] }
+  = error_tag @replacement.errors[:teacher_id]
+  = f.label :audience_id
+  = f.select :audience_id, @schedule.audiences.map{ |t| [t.title, t.id] }
+  = error_tag @replacement.errors[:audience_id]
+  = f.label :date
+  = f.text_field :date
+  = error_tag @replacement.errors[:date]
+  = f.hidden_field :lesson_id, :value => @replacement.lesson_id
+  = f.hidden_field :group_id, :value => @replacement.group_id
+  = f.hidden_field :day_id, :value => @replacement.day_id
+  = f.hidden_field :schedule_call_id, :value => @replacement.schedule_call_id
+  br
+  = f.submit t("ok")

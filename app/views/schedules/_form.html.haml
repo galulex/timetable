@@ -1,6 +1,0 @@
-= form_for @schedule, :remote => true do |f|
-  = f.label :title
-  = f.text_field :title
-  = error_tag @schedule.errors[:title]
-  %br
-  = f.submit t("ok")

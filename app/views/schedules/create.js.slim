@@ -1,0 +1,5 @@
+- if @schedule.errors.any?
+  | $('#lazybox_body form').html("#{escape_javascript(render :partial => 'form')}");
+-else
+  | $('a#lazybox_close').click();
+  | window.location = "#{ schedule_path(@schedule) }";

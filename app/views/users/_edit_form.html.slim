@@ -1,0 +1,9 @@
+= form_for @user, :url => user_path(@user), :remote => true do |f|
+  = f.label :first_name
+  = f.text_field :first_name
+  = error_tag @user.errors[:first_name]
+  = f.label :last_name
+  = f.text_field :last_name
+  = error_tag @user.errors[:last_name]
+  br
+  = f.submit t("ok")

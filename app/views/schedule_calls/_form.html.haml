@@ -1,9 +1,0 @@
-%td{ colspan: 3 }
-  = form_for [@schedule, @object], remote: true do |f|
-    %table
-      %tr
-        %td.start_at= f.time_select :start_at, minute_step: 5, class: :time_select, placeholder: placeholder_for(@object, :start_at)
-        %td.finish_at
-          = f.time_select :finish_at, minute_step: 5, class: :time_select
-          = error_tag(@object.errors[:finish_at])
-        %td.actions= f.submit t("ok")

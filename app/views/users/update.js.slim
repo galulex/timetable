@@ -1,0 +1,5 @@
+- if @user.errors.any?
+  | $('#lazybox_body form').html("#{escape_javascript(render :partial => 'edit_form')}");
+-else
+  | $(document).trigger('close.lazybox');
+  | window.location.reload();

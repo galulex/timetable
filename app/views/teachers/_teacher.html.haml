@@ -1,8 +1,0 @@
-%tr{:id => "teacher_#{teacher.id}"}
-  %td= teacher.first_name
-  %td= teacher.last_name
-  %td= teacher.hours
-  %td.actions
-    - unless @schedule.published?
-      = link_to t(".edit"), edit_schedule_teacher_path(@schedule, teacher), :remote => true
-      = link_to t("delete"), schedule_teacher_path(@schedule, teacher), :method => :delete, :remote => true, :confirm => t(:are_you_sure)

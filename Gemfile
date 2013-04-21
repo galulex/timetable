@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 gem 'json'
-gem 'haml'
+gem 'slim'
 gem 'lazybox'
 gem 'facebook_oauth'
 gem 'bcrypt-ruby', :require => "bcrypt"

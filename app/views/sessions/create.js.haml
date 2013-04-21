@@ -1,5 +1,0 @@
-- if @message
-  $('form#new_session').html("#{escape_javascript(render :partial => 'form')}");
-- else
-  $(document).trigger('close.lazybox');
-  window.location = "#{ schedules_path }";

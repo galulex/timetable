@@ -1,0 +1,32 @@
+div
+  ul.button-group
+    li= link_to t(".all"), schedule_path(@schedule), class: :button
+    - @schedule.days.each_pair do |i, day|
+      li.item= link_to day, schedule_path(@schedule, :day_id => i), class: :button
+
+- if @schedule.groups.any?
+  table  width=(@table_width )
+    caption
+      h1= @schedule.title
+    thead
+      tr
+        th  colspan=(2 )
+          = link_to schedule_action, schedule_path(@schedule), :method => :put, :class => @schedule.published? ? 'red button' : 'green button'
+          = link_to 'Print', print_schedule_path(@schedule), :class => 'gray button'
+        - @schedule.groups.each do |group|
+          th id="group_#{group.id}"
+    tbody
+      - @days.each_pair do |i, day|
+        tr
+          th.day  rowspan=(@schedule.schedule_calls.size + 1 )
+        - @schedule.schedule_calls.each do |call|
+          tr
+            th.time= call.time
+            - @schedule.groups.each do |group|
+              - if lesson = @lessons.select{ |l| l if l.group_id == group.id && l.day_id == i && l.schedule_call_id == call.id}.first
+                td id="lesson_#{lesson.id}"
+                  = render :partial => 'lesson', :object => lesson
+              - else
+                td
+                  = link_to('+', new_schedule_lesson_path(@schedule, :group_id => group.id, :day_id => i, :schedule_call_id => call.id), :rel => :lazybox, :class => 'add_lesson_link', :id => ['lesson', group.id, i, call.id].join('_'))
+                  = link_to(t(".paste"), paste_schedule_lessons_path(@schedule, :day_id => i, :schedule_call_id => call.id, :group_id => group.id), :method => :post, :remote => true) unless session[:lesson_id].nil?

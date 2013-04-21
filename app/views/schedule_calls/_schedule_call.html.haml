@@ -1,7 +1,0 @@
-%tr{:id => "schedule_call_#{schedule_call.id}"}
-  %td= schedule_call.start_at
-  %td= schedule_call.finish_at
-  %td.actions
-    - unless @schedule.published?
-      = link_to t(".edit"), edit_schedule_schedule_call_path(@schedule, schedule_call), :remote => true
-      = link_to t("delete"), schedule_schedule_call_path(@schedule, schedule_call), :method => :delete, :remote => true, :confirm => t(:are_you_sure)

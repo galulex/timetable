@@ -1,0 +1,13 @@
+- unless @teachers.nil?
+  table#teachers
+    thead
+      tr
+        th= t(".first_name")
+        th= t(".last_name")
+        th= t(".hours")
+        th.actions= t(".actions")
+    tbody
+      = render :partial => 'teacher', :collection => @teachers
+    tfoot
+      tr
+        td= link_to '+', new_schedule_teacher_path, :id => :add_teacher, :remote => true

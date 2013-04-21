@@ -1,0 +1,8 @@
+= form_tag session_path, :remote => true, :id => :new_session do
+  = error_tag @message
+  = label_tag :email, t(".email")
+  = text_field_tag :email, (@user.email if @user)
+  = label_tag :password, t(".password")
+  = password_field_tag :password
+  br
+  = submit_tag t(".sign_in")

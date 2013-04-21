@@ -1,0 +1,5 @@
+- if @object.errors.any?
+  | $("form#new_#{@object.class.to_s.underscore}").parents('tr').html("#{escape_javascript(render :partial => 'form')}");
+- else
+  | $("form#new_#{@object.class.to_s.underscore}").parents('tr').replaceWith("#{escape_javascript(render :partial => "#{@object.class.to_s.underscore}", :object => @object )}");
+  | $('a#add_#{@object.class.to_s.underscore}').show();
