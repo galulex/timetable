@@ -1,5 +1,5 @@
 - if @schedule.errors.any?
-  | $('#lazybox_body form').html("#{escape_javascript(render :partial => 'form')}");
+  | $('#modal form').html("#{ j(render partial: 'form') }");
 -else
-  | $('a#lazybox_close').click();
+  | $('#modal').foundation('reveal', 'close')
   | window.location = "#{ schedule_path(@schedule) }";

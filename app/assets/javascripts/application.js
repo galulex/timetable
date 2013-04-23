@@ -10,14 +10,10 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require foundation
-//= require lazybox
 //= require_tree .
-
-$.setReadyEvent('page:change');
 
 $(document).foundation();
 $(document).ready(function() {
-  $('a[rel*=lazybox]').lazybox();
 
   $("#institution").bind('keyup',function() {
     $.ajax({

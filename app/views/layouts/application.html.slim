@@ -11,7 +11,7 @@ html
         li.name
           h1= link_to 'Title', ''
         li.toggle-topbar.menu-icon
-          a  href: '' 
+          a href=''
             span menu
       section.top-bar-section
         - if can_manage_schedules? && !@schedule.nil? && !can_view_schedule?
@@ -28,7 +28,7 @@ html
               li.has-dropdown
                 = link_to 'Account'
                 ul.dropdown
-                  li= link_to current_user.name, edit_user_path(current_user), rel: :lazybox
+                  li= link_to current_user.name, edit_user_path(current_user), remote: true
                   li= link_to t(".sign_out"), session_path, method: :delete
       - if can_view_schedule?
         = form_tag view_schedule_path, method: :get do
@@ -38,3 +38,4 @@ html
     .message= flash[:error] if flash[:error]
     .container
       = yield
+    #modal.reveal-modal.medium

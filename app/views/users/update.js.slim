@@ -1,5 +1,4 @@
 - if @user.errors.any?
-  | $('#lazybox_body form').html("#{escape_javascript(render :partial => 'edit_form')}");
+  | $('#modal form').html("#{ j(render 'edit_form') }");
 -else
-  | $(document).trigger('close.lazybox');
-  | window.location.reload();
+  | $('#modal').foundation('reveal', 'close');

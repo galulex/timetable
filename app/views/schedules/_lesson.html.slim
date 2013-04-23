@@ -5,8 +5,8 @@ p= lesson.audience.title unless lesson.audience.nil?
 - if @schedule.published
   - unless replacements = @replacements.select{ |r| r if r.lesson_id == lesson.id }
     - replacements.each do |r|
-      = link_to r.name, edit_schedule_replacement_path(@schedule, r), :rel => :lazybox
-  = link_to(t(".replace"), new_schedule_replacement_path(@schedule, :group_id => lesson.group_id, :day_id => lesson.day_id, :schedule_call_id => lesson.schedule_call_id, :lesson_id => lesson.id), :rel => :lazybox, :class => 'add_replacement_link')
+      = link_to r.name, edit_schedule_replacement_path(@schedule, r), remote: true
+  = link_to(t(".replace"), new_schedule_replacement_path(@schedule, :group_id => lesson.group_id, :day_id => lesson.day_id, :schedule_call_id => lesson.schedule_call_id, :lesson_id => lesson.id), remote: true, :class => 'add_replacement_link')
 - else
-  = link_to t(".edit"), edit_schedule_lesson_path(@schedule, lesson), :rel => :lazybox
+  = link_to t(".edit"), edit_schedule_lesson_path(@schedule, lesson), remote: true
   = link_to t(".delete"), schedule_lesson_path(@schedule, lesson), :method => :delete, :remote => true
